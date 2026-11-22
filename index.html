@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lou Nollent Portfolio 2026</title>
+<meta name="description" content="Lou Nollent — architecture intérieure. Portfolio 2026 : La Grande Coco, Voie 15, Unité 01, La Mue, Han, expérimentation artistique.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* VOICE    occasion : une revue d'architecture indépendante, élégante, feutrée, jamais criarde
+   IDEA     le portfolio papier de Lou devenu magazine : couverture bordeaux, sommaire, chapitres, hors-série, colophon
+   PICTURE  ses propres visuels, pleine page, cadrés en gélules (sommaire), cercles et rectangles de matière posés sur le filet bordeaux
+   COLOUR   papier #F2F2F2, encre #141111, bordeaux de couverture #8E3C3E, sang-de-bœuf #660006 ; la nuit #120B0B pour La Mue
+   TYPE     Cormorant Garamond seule, comme dans le PDF : capitales fines pour les titres, chiffres bordeaux
+   LAYOUT   image | filet | texte au bureau ; empilé image, filet horizontal, texte au téléphone */
+:root{color-scheme:light;--paper:#F2F2F2;--ink:#141111;--soft:#5d5353;--wine:#8E3C3E;--ox:#660006;--line:rgba(102,0,6,.55);--night:#120B0B;--hd:58px;--serif:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 19px/1.55 var(--serif);overflow-x:clip;font-feature-settings:"onum" 1,"kern" 1}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ox);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ox);color:#fff;padding:10px 16px;z-index:200}
+.skip:focus{left:8px}
+.caps{text-transform:uppercase;letter-spacing:.06em}
+.ox{color:var(--ox)}
+.wrap{max-width:1360px;margin:0 auto;padding-inline:max(4.5vw,18px)}
+
+/* ——— header ——— */
+.top{position:fixed;inset:0 0 auto;height:var(--hd);z-index:60;display:flex;align-items:center;gap:20px;padding-inline:max(3vw,16px);background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:background .4s,color .4s,border-color .4s}
+.brand{font-weight:600;font-size:19px;letter-spacing:.08em;text-decoration:none;white-space:nowrap}
+.rhead{flex:1;text-align:center;font-size:16px;font-style:italic;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rhead b{font-style:normal;font-weight:500;color:var(--ox);margin-right:.4em}
+.navl{display:flex;gap:4px}
+.navl a{text-decoration:none;font-size:16px;letter-spacing:.06em;text-transform:uppercase;padding:10px 12px;position:relative}
+.navl a::after{content:"";position:absolute;left:12px;right:12px;bottom:6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.navl a:hover::after,.navl a[aria-current=page]::after{transform:scaleX(1)}
+.menu-b{display:none;background:none;border:1px solid currentColor;padding:8px 16px;min-height:44px;letter-spacing:.08em;text-transform:uppercase;font-size:15px;cursor:pointer}
+.bar{position:fixed;left:0;top:0;height:2px;background:var(--ox);z-index:70;width:0}
+body.r-couverture .top,body.r-contact .top{background:transparent;color:var(--paper);border-color:rgba(242,242,242,.35);backdrop-filter:none}
+body.r-couverture .bar,body.r-contact .bar{background:var(--paper)}
+body.r-couverture .rhead,body.r-contact .rhead{color:rgba(242,242,242,.75)}
+body.r-couverture .rhead b,body.r-contact .rhead b{color:var(--paper)}
+body.r-la-mue{background:var(--night)}
+body.r-la-mue .top{background:color-mix(in srgb,var(--night) 88%,transparent);color:#efe6e3;border-color:rgba(200,120,120,.35)}
+body.r-la-mue .rhead{color:#b9a9a6}
+body.r-la-mue .rhead b{color:#d9878a}
+
+/* ——— overlay menu ——— */
+.ov{position:fixed;inset:0;z-index:90;background:var(--wine);color:var(--paper);display:none;flex-direction:column;padding:calc(var(--hd) + 10px) max(6vw,20px) 30px;overflow:auto}
+.ov.on{display:flex}
+.ov-close{position:absolute;top:8px;right:max(3vw,12px);background:none;border:1px solid rgba(242,242,242,.6);min-height:44px;padding:6px 16px;cursor:pointer;letter-spacing:.08em;text-transform:uppercase;font-size:15px}
+.ov a{display:flex;gap:16px;align-items:baseline;text-decoration:none;font-size:clamp(30px,8vw,48px);line-height:1.15;padding:6px 0;border-bottom:1px solid rgba(242,242,242,.25)}
+.ov a i{font-style:normal;font-size:.55em;width:1.6em;opacity:.8}
+.ov .ov-s{margin-top:26px;font-size:15px;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+
+/* ——— views ——— */
+.view{display:none}
+.view.on{display:block}
+main{min-height:100svh}
+
+/* ——— reveal & motion ——— */
+html.js .rv{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+html.js .rv.in{opacity:1;transform:none}
+.zoom{overflow:hidden}
+.zoom img{transform:scale(var(--s,1.1));transform-origin:50% 50%;will-change:transform}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em;margin-bottom:-.06em}
+.w>span{display:inline-block}
+html.js .view.on .anim .w>span{animation:rise 1.1s cubic-bezier(.2,.75,.2,1) both;animation-delay:calc(var(--i,0) * 70ms + .15s)}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pill{from{clip-path:inset(100% 0 0 0 round 999px);transform:translateY(40px)}to{clip-path:inset(0 0 0 0 round 999px);transform:none}}
+
+/* ——— figures ——— */
+figure{margin:0}
+figcaption{font-size:16px;color:var(--ox);margin-top:8px;line-height:1.3}
+.z{cursor:zoom-in;position:relative;overflow:hidden}
+.z img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.z:hover img{transform:scale(1.035)}
+.zoom.z:hover img{transform:scale(var(--s,1.1))}
+.cover-fit img{width:100%;height:100%;object-fit:cover}
+.paperbox{background:#fff;padding:clamp(10px,1.5vw,22px)}
+
+/* ——— COVER ——— */
+.cv{background:var(--wine);color:var(--paper);min-height:100svh;padding:calc(var(--hd) + 2vh) max(3vw,16px) 22px;display:grid;grid-template-rows:auto 1fr auto;gap:2vh;position:relative;overflow:hidden}
+.cv-mast{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:20px;border-bottom:1px solid rgba(242,242,242,.5);padding-bottom:1.2vh}
+.cv-name{font-weight:500;font-size:clamp(58px,11.6vw,220px);line-height:.82;letter-spacing:-.01em;margin:0;white-space:nowrap}
+.cv-issue{font-size:16px;line-height:1.35;text-align:right;letter-spacing:.06em;text-transform:uppercase;padding-bottom:.6em}
+.cv-issue big{display:block;font-size:42px;letter-spacing:0;font-weight:300}
+.cv-body{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,3.1fr);gap:clamp(18px,3vw,48px);align-items:stretch;min-height:0}
+.cv-side{display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding-block:1vh}
+.cv-quote{font-style:italic;font-weight:300;font-size:clamp(28px,2.6vw,46px);line-height:1.08;margin:0}
+.cv-disc{font-size:17px;line-height:1.4;letter-spacing:.06em;text-transform:uppercase;margin:0}
+.cv-disc span{display:block;font-size:15px;opacity:.8;margin-top:6px}
+.pills{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1.2vw,22px);min-height:0;align-items:stretch}
+.pl{display:flex;flex-direction:column;text-decoration:none;min-height:0}
+.pl-img{flex:1;min-height:clamp(240px,52vh,620px);border-radius:999px;overflow:hidden;position:relative;background:#7a3234;animation:pill 1.3s cubic-bezier(.2,.75,.2,1) both;animation-delay:calc(var(--i) * 110ms + .35s)}
+.pl-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .8s,transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.pl:hover .pl-img img,.pl:focus-visible .pl-img img{filter:none;transform:scale(1.06)}
+.pl-cap{display:flex;gap:.5em;align-items:baseline;margin-top:10px;font-size:clamp(17px,1.4vw,24px);line-height:1.1;animation:fade 1s both;animation-delay:calc(var(--i) * 110ms + .9s)}
+.pl-cap i{font-style:normal;font-size:1.3em}
+.cv-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px solid rgba(242,242,242,.5);padding-top:12px;font-size:16px;letter-spacing:.06em;text-transform:uppercase}
+.cv-foot a{text-decoration:none;padding:8px 0;display:inline-flex;align-items:center;gap:10px}
+.cv-foot a:hover{text-decoration:underline;text-underline-offset:5px}
+.arrow{display:inline-block;transition:transform .4s}
+a:hover .arrow{transform:translateX(6px)}
+
+/* home: dans ce numéro */
+.edito{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(24px,5vw,90px);padding-block:clamp(60px,9vw,140px) clamp(30px,5vw,70px);align-items:end}
+.edito h2{font-weight:300;font-size:clamp(44px,6vw,96px);line-height:.95;margin:0}
+.edito p{margin:0;max-width:62ch}
+.feat{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(14px,2vw,30px);padding-block:clamp(36px,5vw,80px);border-top:1px solid var(--line);align-items:center;text-decoration:none}
+.feat .fi{grid-column:1 / span 7;aspect-ratio:4/3}
+.feat .ft{grid-column:9 / span 4}
+.feat.alt .fi{grid-column:6 / span 7;grid-row:1}
+.feat.alt .ft{grid-column:1 / span 4;grid-row:1}
+.feat.tall .fi{grid-column:2 / span 5;aspect-ratio:4/5}
+.feat.tall .ft{grid-column:8 / span 4}
+.feat.wide .fi{grid-column:1 / span 12;aspect-ratio:21/9}
+.feat.wide .ft{grid-column:1 / span 12;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:end}
+.fnum{font-size:clamp(64px,8vw,140px);line-height:.8;color:var(--ox);font-weight:300}
+.feat h3{font-weight:400;font-size:clamp(34px,3.6vw,60px);line-height:1;margin:.15em 0 .3em;text-transform:uppercase;letter-spacing:.01em}
+.feat p{margin:0 0 18px;color:var(--soft)}
+.more{display:inline-flex;align-items:center;gap:10px;font-size:16px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--ox);padding:6px 0;color:var(--ox)}
+.feat:hover h3{color:var(--ox)}
+.hs-band{background:var(--wine);color:var(--paper);padding-block:clamp(50px,7vw,110px)}
+.hs-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(24px,5vw,80px);align-items:center}
+.hs-grid h2{font-weight:300;font-size:clamp(40px,5vw,82px);line-height:.95;margin:0 0 20px;text-transform:uppercase}
+.hs-imgs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;align-items:end}
+.hs-imgs a{display:block;text-decoration:none}
+.hs-imgs .ph{aspect-ratio:3/4;border-radius:999px 999px 0 0;overflow:hidden;background:#f2f2f2}
+.hs-imgs img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.hs-imgs a:hover img{transform:scale(1.05)}
+.hs-imgs span{display:block;margin-top:10px;font-size:17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:10px 22px;border:1px solid currentColor;text-decoration:none;font-size:16px;letter-spacing:.08em;text-transform:uppercase;background:transparent;cursor:pointer;transition:background .3s,color .3s}
+.btn:hover{background:var(--ox);color:var(--paper);border-color:var(--ox)}
+.btn.lt:hover{background:var(--paper);color:var(--wine);border-color:var(--paper)}
+
+/* ——— SOMMAIRE ——— */
+.sm-band{height:clamp(70px,12vh,120px);background:#944848;border-bottom:4px solid var(--ox);margin-top:var(--hd)}
+.sm{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,.5fr);gap:clamp(18px,3.5vw,60px);padding-block:clamp(30px,5vw,70px)}
+.sm-v{writing-mode:vertical-rl;transform:rotate(180deg);font-size:clamp(72px,9vw,150px);line-height:.8;font-weight:400;margin:0;align-self:start;position:sticky;top:calc(var(--hd) + 20px)}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{border-bottom:1px solid var(--line)}
+.rows li:first-child{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:3.2em minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:clamp(16px,2vw,26px) 4px;text-decoration:none;transition:padding .45s cubic-bezier(.2,.7,.2,1),background .3s}
+.row .n{font-size:clamp(30px,3vw,48px);color:var(--ox);line-height:1}
+.row .t{font-size:clamp(32px,3.7vw,62px);line-height:1;text-transform:uppercase;letter-spacing:.005em}
+.row .s{display:block;font-size:18px;font-style:italic;color:var(--soft);text-transform:none;letter-spacing:0;margin-top:8px;line-height:1.3}
+.row .c{font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-align:right;color:var(--soft);line-height:1.4;white-space:nowrap}
+.row .c b{display:block;font-weight:400;color:var(--ox)}
+.row .thumb{display:none}
+.row:hover,.row:focus-visible{padding-left:22px;background:rgba(142,60,62,.06)}
+.row:hover .t{color:var(--ox)}
+.sm-prev{position:sticky;top:calc(var(--hd) + 24px);align-self:start}
+.sm-prev .pp{aspect-ratio:.46;max-height:calc(100svh - var(--hd) - 120px);margin-left:auto;border-radius:999px;overflow:hidden;position:relative;background:#ddd}
+.sm-prev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s,transform 1.2s;transform:scale(1.08)}
+.sm-prev img.on{opacity:1;transform:none}
+.sm-prev p{font-size:16px;font-style:italic;color:var(--soft);text-align:right;margin:12px 0 0}
+.sm-hs{margin-top:clamp(30px,4vw,60px)}
+.sm-hs h2{font-size:16px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:var(--ox);margin:0 0 10px}
+.rows.small .t{font-size:clamp(26px,2.6vw,40px)}
+.rows.small .n{font-size:clamp(22px,2vw,32px)}
+
+/* ——— ARTICLE ——— */
+.opener{display:grid;grid-template-columns:minmax(0,1.04fr) 4px minmax(0,1fr);min-height:calc(100svh - var(--hd));margin-top:var(--hd)}
+.op-img{position:relative;overflow:hidden;background:#e5e0dc}
+.op-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.op-rule{background:var(--ox);position:relative;z-index:3}
+.sws{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;gap:clamp(10px,2.4vh,26px)}
+.sw{border:3px solid var(--ox);overflow:hidden;background:#ddd;flex:none;box-shadow:0 0 0 1px rgba(255,255,255,.2)}
+.sw img{width:100%;height:100%;object-fit:cover}
+.sw.rect{width:clamp(130px,14vw,215px);height:clamp(48px,8.5vh,76px)}
+.sw.sq{width:clamp(64px,6.4vw,92px);height:clamp(64px,6.4vw,92px)}
+.sw.ci{width:clamp(66px,7.4vw,104px);height:clamp(66px,7.4vw,104px);border-radius:50%}
+.sw-wrap{animation:fade 1s both;animation-delay:.4s}
+.sws.left{transform:translate(-82%,-50%)}
+.op-text{padding:clamp(28px,4.5vw,76px) clamp(24px,5vw,90px) clamp(28px,4vw,60px) clamp(52px,6vw,110px);display:flex;flex-direction:column;justify-content:center}
+.title{font-weight:400;font-size:clamp(50px,6.4vw,112px);line-height:.92;letter-spacing:-.01em;margin:0;text-transform:uppercase}
+.title .num{color:var(--ox);font-weight:400;margin-right:.08em}
+.title.mixed{text-transform:none}
+.sub{font-size:clamp(21px,1.7vw,28px);line-height:1.25;margin:.5em 0 1.2em;font-weight:400}
+.lede p{margin:0 0 1em;max-width:58ch;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.pe{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:1.2em;padding-top:1.2em;border-top:1px solid var(--line)}
+.pe h3{font-size:16px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px;color:var(--ox)}
+.pe ul{list-style:none;margin:0;padding:0;line-height:1.45}
+.rh{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:16px;border-bottom:2px solid var(--ox);padding:clamp(40px,6vw,90px) 0 10px;font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:var(--ox)}
+.rh span:last-child{text-align:right}
+.rh b{font-weight:500}
+.sec{padding-block:clamp(34px,5vw,80px)}
+.h2{font-weight:400;font-size:clamp(44px,5.4vw,92px);line-height:.95;margin:0;color:var(--ox)}
+.h2.ink{color:var(--ink)}
+.kick{font-size:16px;letter-spacing:.07em;text-transform:uppercase;margin:12px 0 0}
+.lab{font-size:16px;letter-spacing:.07em;text-transform:uppercase;margin:0 0 12px;display:flex;align-items:center;gap:14px}
+.lab::after{content:"";height:1px;background:var(--ox);flex:0 0 70px}
+.text-rule{border-left:3px solid var(--ox);padding-left:clamp(16px,1.8vw,26px)}
+.text-rule p{margin:0 0 .8em}
+.keys{list-style:none;margin:0;padding:0}
+.keys li{display:flex;gap:12px;align-items:baseline;padding:4px 0}
+.keys li::before{content:"";width:9px;height:9px;background:var(--ox);flex:none;transform:translateY(-1px)}
+.keys-t{font-size:20px;margin:0 0 4px;padding-bottom:8px;border-bottom:3px solid var(--ox);display:inline-block}
+.chips{display:flex;gap:12px;flex-wrap:wrap}
+.chips i{width:clamp(46px,4.4vw,64px);aspect-ratio:1;display:block}
+.g{display:grid;gap:clamp(12px,1.6vw,24px)}
+.bleed{position:relative;height:min(100svh,980px);overflow:hidden}
+.bleed>img,.bleed .zoom>img{width:100%;height:100%;object-fit:cover}
+.bleed .zoom{position:absolute;inset:0}
+.bleed .cap{position:absolute;left:max(4.5vw,18px);bottom:24px;color:#fff;font-size:17px;letter-spacing:.06em;text-transform:uppercase;text-shadow:0 1px 12px rgba(0,0,0,.5);z-index:2}
+.pq{font-weight:300;font-style:italic;font-size:clamp(34px,4.4vw,74px);line-height:1.04;margin:0;text-wrap:balance}
+.next{display:block;text-decoration:none;background:var(--wine);color:var(--paper);overflow:hidden;position:relative}
+.next .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:center;padding-block:clamp(40px,6vw,90px)}
+.next small{font-size:16px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.next strong{display:block;font-weight:400;font-size:clamp(46px,7vw,130px);line-height:.9;text-transform:uppercase;margin-top:12px;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.next:hover strong{transform:translateX(18px)}
+.next .np{width:clamp(110px,13vw,200px);aspect-ratio:.46;border-radius:999px;overflow:hidden}
+.next .np img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .8s,transform 1.2s}
+.next:hover .np img{filter:none;transform:scale(1.05)}
+.back{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:18px;font-size:16px;letter-spacing:.07em;text-transform:uppercase}
+.back a{text-decoration:none;padding:8px 0}
+.back a:hover{color:var(--ox)}
+
+/* — Grande Coco — */
+.coco-op .op-img{background:#cfd3cf}
+.coco-op .op-img img{object-position:50% 100%}
+.cq-band{background:#2a1a12;color:#f3e9dc}
+.cq-band .h2{color:#f3e9dc}
+.cq-band .keys li::before{background:#e39a5f}
+.cq-band .keys-t{border-color:#e39a5f}
+.cq-band .text-rule{border-color:#e39a5f}
+.cq-band .lab::after{background:#e39a5f}
+.cq-band figcaption{color:#e39a5f}
+.cq-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) minmax(0,1.6fr);grid-template-areas:"head stage drums" "mood text plan" "chips keys plan";gap:clamp(14px,2vw,30px);align-items:start}
+.cq-mood{grid-area:mood;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.cq-mood figure{aspect-ratio:3/4}
+.cq-mood figure:last-child{grid-column:1/-1;aspect-ratio:4/3}
+.cd-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(14px,2vw,30px)}
+.cd-mood{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;height:clamp(180px,22vw,320px)}
+.maq{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,50px);align-items:center}
+.maq figure{background:#e9e7e4;padding:clamp(14px,3vw,46px)}
+.plan-paper{background:#fff;padding:clamp(10px,1.4vw,20px)}
+
+/* — Voie 15 — */
+.v15-op .op-img img{object-position:50% 40%}
+.mood6{display:grid;grid-template-columns:1.1fr 1.4fr .8fr .9fr;grid-template-rows:repeat(2,clamp(170px,20vw,300px));gap:8px}
+.mood6 figure:nth-child(1){grid-row:span 2}
+.mood6 figure:nth-child(4){grid-row:span 2}
+.cx{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr) minmax(0,1.8fr);gap:clamp(16px,2.2vw,34px);align-items:start}
+.zones{display:grid;gap:18px}
+.legend{display:grid;gap:14px;margin-top:6px}
+.legend div{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:center;line-height:1.2;padding-bottom:12px;border-bottom:1.5px solid var(--ox)}
+.legend div:last-child{border:0}
+.legend i{width:44px;height:44px;border-radius:50%;display:block}
+.legend b{font-weight:400;text-transform:uppercase;letter-spacing:.04em}
+.legend small{display:block;font-size:17px;color:var(--soft)}
+.rythmes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,3vw,60px);text-align:left}
+.rythme .ci{aspect-ratio:1;border-radius:50%;overflow:hidden;border:clamp(8px,1vw,14px) solid var(--c);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.rythme .ci img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s}
+.rythme:hover .ci{transform:rotate(-4deg) scale(1.02)}
+.rythme:hover .ci img{transform:scale(1.12)}
+.rythme ul{list-style:none;padding:0;margin:18px 0 0 18%;line-height:1.45;font-size:20px}
+.rythme ul li:first-child{color:var(--ox)}
+.v15-proj{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.6fr);gap:clamp(18px,3vw,50px);align-items:end}
+.v15-plans{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.55fr) minmax(0,1fr) minmax(0,.9fr);gap:clamp(14px,2vw,28px);align-items:end}
+.textile-band{background-size:clamp(260px,30vw,460px) auto;background-repeat:repeat;padding-block:clamp(80px,14vw,220px);position:relative}
+.textile-band .card{background:var(--paper);max-width:760px;margin:0 auto;padding:clamp(26px,4vw,60px);text-align:center;border:3px solid var(--ox)}
+.trio{display:flex;flex-wrap:wrap;justify-content:center;gap:.1em .5em;font-size:clamp(40px,5.4vw,90px);line-height:1;font-weight:300}
+.trio span:nth-child(2){color:var(--ox)}
+
+/* — Unité 01 — */
+.u-op .op-img img{object-position:28% 50%}
+.u-site{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1.3fr);gap:clamp(18px,3vw,50px);align-items:start}
+.u-refs{display:grid;grid-template-columns:1fr 1.3fr;grid-template-rows:auto auto;gap:10px}
+.u-refs figure:last-child{grid-column:1/-1}
+.u-sws{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.u-sws figure{aspect-ratio:1}
+.elev{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,48px);align-items:end}
+.u-last{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(18px,3vw,50px);align-items:center}
+
+/* — La Mue (nuit) — */
+.mue{background:var(--night);color:#efe6e3}
+.mue .op-text .lede p{color:#e4d9d6}
+.mue .opener{background:var(--night)}
+.mue .op-rule{background:#8f1d22}
+.mue .sw{border-color:#8f1d22}
+.mue .title .num,.mue .ox,.mue .pe h3,.mue .h2{color:#d9878a}
+.mue .pe{border-color:rgba(217,135,138,.35)}
+.mue .rh{color:#d9878a;border-color:#8f1d22}
+.mue .lab::after{background:#d9878a}
+.mue figcaption{color:#d9878a}
+.mue-a{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(20px,4vw,70px);align-items:center}
+.steps{position:relative}
+.steps-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(20px,4vw,70px)}
+.st-txt{display:grid;gap:40vh;padding-block:20vh}
+.st{opacity:.32;transition:opacity .6s}
+.st.on{opacity:1}
+.st i{font-style:normal;font-size:clamp(70px,8vw,140px);line-height:.8;color:#d9878a;font-weight:300;display:block}
+.st h3{font-weight:400;font-size:clamp(28px,2.8vw,44px);line-height:1.1;margin:10px 0 0}
+.st-pic{position:sticky;top:calc(var(--hd) + 4vh);height:calc(100svh - var(--hd) - 8vh);display:grid;place-items:center}
+.st-pic .glow{position:absolute;inset:12% 18%;background:radial-gradient(closest-side,rgba(255,170,90,.22),transparent);filter:blur(10px)}
+.st-pic img{position:absolute;max-height:86%;max-width:80%;left:50%;top:50%;transform:translate(-50%,-50%) scale(.96);opacity:0;transition:opacity .9s,transform 1.2s cubic-bezier(.2,.7,.2,1);background:#f2efe8;padding:clamp(12px,2vw,28px)}
+.st-pic img.on{opacity:1;transform:translate(-50%,-50%)}
+.st-mobile{display:none}
+.objs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,3vw,50px);align-items:end}
+.objs figure:nth-child(2){transform:translateY(-12%)}
+.objs img{filter:drop-shadow(0 30px 30px rgba(0,0,0,.6));margin-inline:auto;max-height:520px}
+.lines-paper{background:#f2f2f2;padding:clamp(14px,3vw,40px)}
+
+/* — Han — */
+.han-hero{position:relative;height:calc(100svh - var(--hd));min-height:560px;margin-top:var(--hd);overflow:hidden}
+.han-hero .zoom{position:absolute;inset:0}
+.han-hero img{width:100%;height:100%;object-fit:cover;object-position:30% 60%}
+.han-card{position:absolute;right:max(3vw,16px);bottom:max(4vh,16px);width:min(560px,calc(100% - 32px));background:var(--paper);border-left:4px solid var(--ox);padding:clamp(22px,3vw,44px)}
+.han-intro{display:grid;grid-template-columns:minmax(0,1.3fr) auto minmax(0,1fr);gap:clamp(20px,4vw,70px);align-items:center}
+.han-sws{display:flex;gap:18px}
+.han-sws .sw{width:clamp(90px,9vw,130px);height:clamp(90px,9vw,130px);border-radius:50%}
+.mods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--ox)}
+.mod{padding:clamp(18px,2.2vw,32px) clamp(12px,1.8vw,28px) clamp(22px,2.6vw,36px);border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.mod:nth-child(3n){border-right:0}
+.mod h3{display:flex;gap:14px;align-items:baseline;margin:0;font-weight:400;font-size:clamp(26px,2.4vw,38px);text-transform:uppercase;line-height:1}
+.mod h3 i{font-style:normal;color:var(--ox);font-size:18px}
+.mod .rnd{height:clamp(170px,17vw,260px);display:grid;place-items:center;margin:12px 0}
+.mod .rnd img{max-height:100%;width:auto;object-fit:contain;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.mod:hover .rnd img{transform:scale(1.07) translateY(-4px)}
+.mod .dw{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end}
+.mod .dw figure{background:#fff;padding:8px}
+.mod .dw figcaption{font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+
+/* — Hors-série — */
+.hs-op{display:grid;grid-template-columns:minmax(0,1.04fr) 4px minmax(0,1fr);min-height:calc(100svh - var(--hd));margin-top:var(--hd)}
+.coll{position:relative;overflow:hidden;background:#f6f6f6;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.4fr 1fr}
+.coll figure{position:relative;overflow:hidden}
+.coll img{width:100%;height:100%;object-fit:cover}
+.coll .c3{grid-column:1/-1}
+.coll .c2{background:#fff}
+.coll .c2 img{object-fit:contain;padding:6%}
+.ho{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr) minmax(0,.8fr);gap:clamp(18px,3vw,50px);align-items:start}
+.ho .tags{list-style:none;padding:0;margin:16px 0 0;letter-spacing:.06em;line-height:1.5;border-top:2px solid var(--ox);padding-top:14px}
+.ho-r{display:grid;gap:clamp(12px,1.6vw,22px)}
+.ss{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,1fr);gap:clamp(14px,2vw,28px);align-items:start}
+.ss2{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.8fr);gap:clamp(14px,2vw,28px);align-items:stretch}
+.ss2 .wide{grid-column:1/-1;aspect-ratio:21/9}
+.ss2 .bath figure:first-child{flex:1}
+.ss2 .bath{display:grid;gap:clamp(14px,2vw,28px)}
+.draw{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(14px,2vw,28px);align-items:end}
+
+/* ——— À PROPOS ——— */
+.ab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:clamp(24px,5vw,90px);padding-top:calc(var(--hd) + clamp(30px,5vw,70px));align-items:start}
+.ab-h{font-weight:400;font-size:clamp(60px,9vw,160px);line-height:.85;margin:0 0 24px;text-transform:uppercase}
+.portrait{border-radius:999px 999px 0 0;overflow:hidden;aspect-ratio:4/5}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.idcard{margin-top:22px}
+.idcard h2{font-weight:400;font-size:clamp(38px,3.6vw,60px);margin:0;line-height:1}
+.idcard p{margin:8px 0 0;line-height:1.4}
+.ab-q{font-weight:500;color:var(--ox);font-size:clamp(34px,3.8vw,64px);line-height:1.02;margin:0 0 28px;text-wrap:balance}
+.ab-t p{margin:0 0 1em;max-width:62ch}
+.terr{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0;padding:0;list-style:none}
+.terr li{border:1px solid var(--ox);border-radius:999px;padding:8px 20px;font-size:19px;color:var(--ox);transition:background .3s,color .3s}
+.terr li:hover{background:var(--ox);color:var(--paper)}
+.cvx{display:grid;grid-template-columns:minmax(0,1fr) 2px minmax(0,1fr);gap:clamp(20px,4vw,64px);margin-top:20px}
+.cvx .vr{background:var(--ox)}
+.cvx h3{font-size:17px;letter-spacing:.07em;text-transform:uppercase;color:var(--ox);font-weight:500;margin:34px 0 12px}
+.cvx h3:first-child{margin-top:0}
+.it{margin:0 0 18px}
+.it small{display:block;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--ox)}
+.it b{font-weight:600;display:block;line-height:1.3}
+.it span{color:var(--soft);line-height:1.35;display:block}
+.lv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 16px;margin:0}
+.lv dt{font-weight:600}
+.lv dd{margin:0;color:var(--soft)}
+.cv-head{display:flex;align-items:end;gap:clamp(20px,4vw,60px);border-bottom:1px solid var(--line);padding-bottom:12px;flex-wrap:wrap}
+.cv-head .big{font-size:clamp(70px,8vw,130px);line-height:.8;color:var(--ox);font-weight:400}
+.cv-head p{margin:0;color:var(--ox);font-size:clamp(22px,2vw,32px);text-transform:uppercase;line-height:1.15;flex:1}
+
+/* ——— CONTACT ——— */
+.ct{background:var(--wine);color:var(--paper);min-height:100svh;padding:calc(var(--hd) + clamp(30px,6vw,90px)) 0 0;display:flex;flex-direction:column}
+.ct-h{font-weight:300;font-size:clamp(70px,14vw,260px);line-height:.8;margin:0;text-transform:uppercase;letter-spacing:-.01em}
+.ct-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,5vw,90px);margin-top:clamp(30px,5vw,70px);padding-top:24px;border-top:1px solid rgba(242,242,242,.5)}
+.mail{font-size:clamp(30px,4.4vw,74px);line-height:1;text-decoration:none;overflow-wrap:anywhere;display:inline-block;border-bottom:1px solid rgba(242,242,242,.5);padding-bottom:6px}
+.mail:hover{border-color:var(--paper)}
+.ct p{margin:18px 0 0;line-height:1.4}
+.ct-acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.dls{display:grid;gap:12px}
+.dl{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(242,242,242,.45);text-decoration:none;font-size:clamp(24px,2.2vw,34px);line-height:1.1}
+.dl small{display:block;font-size:15px;letter-spacing:.07em;text-transform:uppercase;opacity:.8;margin-top:6px}
+.dl .ico{width:48px;height:48px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;transition:background .3s,color .3s}
+.dl:hover .ico{background:var(--paper);color:var(--wine)}
+.dl.dark{border-color:var(--line)}
+.ct-foot{margin-top:auto;padding-block:30px 24px}
+.ct .pills-mini{display:flex;gap:10px;margin-top:clamp(40px,6vw,90px)}
+.ct .pills-mini a{flex:1;aspect-ratio:.46;max-height:220px;border-radius:999px;overflow:hidden}
+.ct .pills-mini img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .6s}
+.ct .pills-mini a:hover img{filter:none}
+
+/* ——— footer ——— */
+.colo{border-top:1px solid var(--line);padding-block:26px;font-size:16px;display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;letter-spacing:.04em}
+.colo a{text-decoration:none}
+.colo a:hover{color:var(--ox)}
+.mue .colo{border-color:rgba(217,135,138,.35)}
+
+/* ——— curtain, lightbox, toast ——— */
+.curtain{position:fixed;inset:0;z-index:120;background:var(--wine);color:var(--paper);display:grid;place-items:center;transform:translateY(101%);pointer-events:none;visibility:hidden}
+.curtain.go{visibility:visible;transition:transform .5s cubic-bezier(.7,0,.3,1);transform:none}
+.curtain.out{visibility:visible;transition:transform .6s cubic-bezier(.7,0,.3,1);transform:translateY(-101%)}
+.curtain div{text-align:center}
+.curtain b{display:block;font-weight:300;font-size:clamp(120px,20vw,320px);line-height:.8}
+.curtain span{display:block;font-size:clamp(26px,3vw,46px);text-transform:uppercase;letter-spacing:.04em;margin-top:14px}
+.lb{position:fixed;inset:0;z-index:130;background:rgba(18,11,11,.96);color:#f2f2f2;display:none;grid-template-rows:auto 1fr auto;padding:12px max(2vw,12px) 16px}
+.lb.on{display:grid}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:16px;letter-spacing:.06em;text-transform:uppercase}
+.lb-b{background:none;border:1px solid rgba(242,242,242,.5);min-width:48px;min-height:48px;padding:6px 14px;cursor:pointer;font-size:16px;letter-spacing:.06em;text-transform:uppercase}
+.lb-b:hover{background:#f2f2f2;color:#120b0b}
+.lb-st{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;min-height:0}
+.lb-st img{max-width:100%;max-height:calc(100svh - 150px);margin:auto;object-fit:contain;background:#fff}
+.lb-st img.tr{background:transparent}
+.lb-cap{text-align:center;font-style:italic;font-size:18px;min-height:1.4em}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,160%);visibility:hidden;background:var(--ink);color:var(--paper);padding:14px 22px;z-index:140;transition:transform .4s;max-width:calc(100% - 32px);font-size:17px}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+
+/* ——— responsive ——— */
+@media (max-width:1100px){
+  .navl a{padding:10px 8px;font-size:15px}
+  .cq-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"head head" "stage drums" "mood text" "chips keys" "plan plan"}
+  .cx{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}
+  .cx .zones{grid-column:1/-1}
+  .u-site{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .u-site>div:last-child{grid-column:1/-1}
+  .v15-plans{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .ho{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr)}
+  .ho .ho-r{grid-column:1/-1;grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .navl,.rhead{display:none}
+  .top{justify-content:space-between}
+  .menu-b{display:inline-flex;align-items:center}
+  .cv-mast{grid-template-columns:1fr}
+  .cv-name{white-space:normal;font-size:clamp(40px,16vw,120px);line-height:.86}
+  .cv-issue{text-align:left;display:flex;gap:16px;align-items:baseline;padding:0}
+  .cv-issue big{display:inline;font-size:30px}
+  .cv-body{grid-template-columns:1fr}
+  .pills{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:6px}
+  .pl{flex:0 0 min(38vw,230px);scroll-snap-align:start}
+  .pl-img{min-height:0;aspect-ratio:.46;flex:none}
+  .cv-side{order:2}
+  .edito,.hs-grid{grid-template-columns:1fr}
+  .feat .fi,.feat .ft,.feat.alt .fi,.feat.alt .ft,.feat.tall .fi,.feat.tall .ft{grid-column:1/-1;grid-row:auto}
+  .feat.tall .fi{aspect-ratio:4/3}
+  .feat.wide .ft{grid-template-columns:auto 1fr}
+  .feat.wide .ft .more{grid-column:1/-1;justify-self:start}
+  .sm{grid-template-columns:auto minmax(0,1fr)}
+  .sm-prev{display:none}
+  .row{grid-template-columns:auto minmax(0,1fr);gap:10px 14px}
+  .row .c{grid-column:2;text-align:left;white-space:normal}
+  .row .c b{display:inline;margin-right:8px}
+  .opener,.hs-op{grid-template-columns:1fr;min-height:0}
+  .op-img{height:68svh}
+  .coll{height:80svh}
+  .op-rule{height:4px}
+  .sws,.sws.left{flex-direction:row;top:50%;left:50%;transform:translate(-50%,-50%);gap:10px}
+  .sw.rect{width:21vw;height:15vw}
+  .sw.sq{width:15vw;height:15vw}
+  .sw.ci{width:17vw;height:17vw}
+  .op-text{padding:calc(9vw + 26px) max(4.5vw,18px) 40px}
+  .op-text.nosw{padding-top:36px}
+  .cq-grid,.cd-grid,.v15-proj,.u-last,.mue-a,.han-intro,.ss,.ss2,.ab,.ct-grid,.cvx,.u-site,.cx{grid-template-columns:1fr;grid-template-areas:none}
+  .cq-grid>*{grid-area:auto !important}
+  .cvx .vr{display:none}
+  .mood6{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:44vw}
+  .mood6 figure:nth-child(1),.mood6 figure:nth-child(4){grid-row:auto}
+  .rythmes{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .rythme ul{margin:10px 0 0;font-size:16px}
+  .v15-plans{grid-template-columns:1fr}
+  .mods{grid-template-columns:1fr 1fr}
+  .mod:nth-child(3n){border-right:1px solid var(--line)}
+  .mod:nth-child(2n){border-right:0}
+  .steps-in{display:none}
+  .st-mobile{display:grid;gap:30px}
+  .st-mobile figure{background:#f2efe8;padding:14px}
+  .objs figure:nth-child(2){transform:none}
+  .han-card{position:relative;right:auto;bottom:auto;width:auto;margin:-80px 16px 0}
+  .han-hero{height:auto;min-height:0;overflow:visible}
+  .han-hero .zoom{position:relative;height:70svh}
+  .ho,.ho .ho-r{grid-template-columns:1fr}
+  .draw{grid-template-columns:1fr 1fr}
+  .draw figure:first-child{grid-column:1/-1}
+  .rh{grid-template-columns:1fr auto;font-size:15px}
+  .rh span:first-child{display:none}
+  .next .wrap{grid-template-columns:1fr}
+  .next .np{display:none}
+  .lb-st{grid-template-columns:1fr}
+  .lb-st .lb-b{display:none}
+  .pe{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  body{font-size:18px}
+  .lede p{text-align:left}
+  .pl{flex-basis:44vw}
+  .mods{grid-template-columns:1fr}
+  .mod{border-right:0 !important}
+  .rythmes{grid-template-columns:1fr;max-width:340px;margin-inline:auto}
+  .elev,.maq,.u-refs,.objs{grid-template-columns:1fr}
+  .objs figure:nth-child(n){transform:none}
+  .cd-mood{grid-template-columns:repeat(3,minmax(0,1fr));height:auto;grid-auto-rows:34vw}
+  .feat.wide .fi{aspect-ratio:4/3}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  html.js .rv{opacity:1;transform:none}
+  .zoom img{transform:none !important}
+}
+</style>
+</head>
+<body class="r-couverture">
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="bar" id="bar" aria-hidden="true"></div>
+
+<header class="top" id="top">
+  <a class="brand" href="#couverture">LOU NOLLENT</a>
+  <div class="rhead" id="rhead" aria-live="polite"><b>Portfolio 2026</b>Architecture intérieure</div>
+  <nav class="navl" aria-label="Navigation principale">
+    <a href="#sommaire" data-nav="sommaire">Sommaire</a>
+    <a href="#a-propos" data-nav="a-propos">À propos</a>
+    <a href="#contact" data-nav="contact">Contact</a>
+  </nav>
+  <button class="menu-b" id="menuB" aria-expanded="false" aria-controls="ov">Menu</button>
+</header>
+
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="ov-close" id="ovClose">Fermer</button>
+  <div id="ovList"></div>
+  <p class="ov-s">Lou Nollent · Architecture intérieure · Paris</p>
+</div>
+
+<main id="main">
+
+<!-- ================= COUVERTURE ================= -->
+<section class="view" id="v-couverture" data-route="couverture" aria-label="Couverture">
+  <div class="cv">
+    <div class="cv-mast">
+      <h1 class="cv-name anim" aria-label="Lou Nollent">LOU NOLLENT</h1>
+      <div></div>
+      <div class="cv-issue"><big>2026</big>Portfolio · Paris</div>
+    </div>
+    <div class="cv-body">
+      <div class="cv-side">
+        <p class="cv-disc">Architecture intérieure<span>Académie Charpentier, quatrième année</span></p>
+        <p class="cv-quote">« Je conçois l’espace comme un récit. »</p>
+        <p class="cv-disc">Dans ce numéro<span>Cinq projets · Un hors-série</span></p>
+      </div>
+      <div class="pills" id="pills"></div>
+    </div>
+    <div class="cv-foot">
+      <a href="#sommaire">Sommaire <span class="arrow">→</span></a>
+      <a href="#a-propos">Mon profil</a>
+      <a href="#contact">Contact &amp; CV</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="edito">
+      <h2 class="rv">Dans ce<br>numéro</h2>
+      <p class="rv" style="--d:.1s">Étudiante en architecture intérieure et design à Paris, je m’intéresse particulièrement à la création d’espaces qui racontent une histoire et suscitent une émotion. Entre architecture, scénographie et design, j’aime explorer la manière dont un lieu peut devenir une véritable expérience.</p>
+    </div>
+    <div id="feats"></div>
+  </div>
+  <div class="hs-band">
+    <div class="wrap hs-grid">
+      <div class="rv">
+        <p class="kick" style="margin:0 0 16px">Hors-série</p>
+        <h2>Expérimentation artistique</h2>
+        <p style="margin:0 0 26px;max-width:46ch">Une sélection de projets personnels développés autour du dessin, de l’objet et de l’expérimentation.</p>
+        <a class="btn lt" href="#experimentation">Ouvrir le hors-série <span class="arrow">→</span></a>
+      </div>
+      <div class="hs-imgs rv" style="--d:.12s">
+        <a href="#experimentation"><div class="ph"><img src="img/hang-situ1.webp" alt="Hanging Organism, porte-manteau en carton installé dans une entrée" width="468" height="654" loading="lazy" decoding="async"></div><span>Hanging Organism</span></a>
+        <a href="#experimentation"><div class="ph"><img src="img/ss-salon.webp" alt="Appartement Saint-Sabin, le salon" width="942" height="601" loading="lazy" decoding="async"></div><span>Saint-Sabin</span></a>
+        <a href="#experimentation"><div class="ph"><img src="img/dr-1.webp" alt="Étude d’après modèle vivant, dessin au crayon" width="1024" height="1464" loading="lazy" decoding="async"></div><span>Modèle vivant</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><footer class="colo" data-colo></footer></div>
+</section>
+
+<!-- ================= SOMMAIRE ================= -->
+<section class="view" id="v-sommaire" data-route="sommaire" aria-label="Sommaire">
+  <div class="sm-band" aria-hidden="true"></div>
+  <div class="wrap sm">
+    <h1 class="sm-v">sommaire</h1>
+    <div>
+      <ol class="rows" id="rows"></ol>
+      <div class="sm-hs">
+        <h2>Hors-série · Expérimentation artistique</h2>
+        <ol class="rows small" id="rowsHs"></ol>
+      </div>
+    </div>
+    <aside class="sm-prev" aria-hidden="true">
+      <div class="pp" id="pp"></div>
+      <p id="ppCap">Survolez un titre</p>
+    </aside>
+  </div>
+  <div class="wrap"><footer class="colo" data-colo></footer></div>
+</section>
+
+<!-- ================= 1. LA GRANDE COCO ================= -->
+<article class="view" id="v-la-grande-coco" data-route="la-grande-coco" aria-label="La Grande Coco">
+  <div class="opener coco-op">
+    <figure class="op-img z" data-cap="La Grande Coco, façade"><img src="img/coco-facade.webp" alt="Illustration de la façade de briques de La Grande Coco, immeuble parisien" width="1357" height="1472" loading="lazy" decoding="async"></figure>
+    <div class="op-rule"><div class="sws sw-wrap left">
+      <div class="sw rect"><img src="img/coco-mat1.webp" alt="Matériau : parquet en bois" width="400" height="400" loading="lazy" decoding="async"></div>
+      <div class="sw rect"><img src="img/coco-mat2.webp" alt="Matériau : tasseaux acoustiques en bois" width="272" height="310" loading="lazy" decoding="async"></div>
+      <div class="sw rect"><img src="img/coco-mat3.webp" alt="Matériau : enduit terracotta" width="450" height="450" loading="lazy" decoding="async"></div>
+      <div class="sw rect"><img src="img/coco-mat4.webp" alt="Matériau : bois sombre" width="841" height="450" loading="lazy" decoding="async"></div>
+    </div></div>
+    <div class="op-text">
+      <h1 class="title mixed anim"><span class="num">1.</span>La Grande Coco</h1>
+      <p class="sub">Réinventer l’habitat collectif autour de la pratique musicale.</p>
+      <div class="lede">
+        <p>La Grande Coco transforme un ancien immeuble parisien en un lieu de résidence et de création dédié aux groupes de musique.</p>
+        <p>Le projet s’organise autour de deux entités complémentaires : Coco Dodo, espace de vie et de création pour les artistes, et Coco Quartier, pensé comme un lieu plus ouvert sur le voisinage.</p>
+        <p>L’enjeu est de permettre aux groupes de vivre, travailler et répéter ensemble tout en maîtrisant les nuisances sonores. L’aménagement articule ainsi espaces privés et collectifs, lieux de répétition et espaces de repos, avec une attention particulière portée à l’acoustique, aux matériaux et aux usages.</p>
+      </div>
+      <div class="pe">
+        <div><h3>Programme</h3><ul><li>Habitat collectif</li><li>Résidences musicales</li><li>Salles de répétition</li><li>Espaces communs</li></ul></div>
+        <div><h3>Enjeux</h3><ul><li>Acoustique</li><li>Vie collective</li><li>Intimité</li><li>Circulation</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bleed"><figure class="zoom z" data-cap="Coco Quartier, salle de répétition"><img src="img/cq-drums.webp" alt="Rendu de Coco Quartier : batterie, tapis persans, murs à tasseaux de bois et canapé rouge" width="724" height="543" loading="lazy" decoding="async"></figure><span class="cap">Coco Quartier</span></div>
+
+  <div class="cq-band">
+    <div class="wrap sec">
+      <div class="cq-grid">
+        <div style="grid-area:head" class="rv">
+          <h2 class="h2">Coco Quartier</h2>
+          <p class="kick">Espace ouvert · Musique · Partage</p>
+        </div>
+        <figure class="z rv" style="grid-area:stage;--d:.05s" data-cap="Coco Quartier, scène et public choisi"><img src="img/cq-stage.webp" alt="Rendu : un groupe en silhouette sur une petite scène face à des chaises en bois" width="580" height="435" loading="lazy" decoding="async"></figure>
+        <figure class="z rv" style="grid-area:drums;--d:.1s" data-cap="Coco Quartier, moodboard"><img src="img/cq-mood4.webp" alt="Moodboard : studio d’enregistrement aux guitares suspendues et canapé vert" width="368" height="368" loading="lazy" decoding="async"></figure>
+        <div style="grid-area:mood" class="rv">
+          <p class="lab">Moodboard</p>
+          <div class="cq-mood">
+            <figure class="z cover-fit" data-cap="Moodboard"><img src="img/cq-mood1.webp" alt="Moodboard : concert intimiste éclairé par des lampes" width="221" height="276" loading="lazy" decoding="async"></figure>
+            <figure class="z cover-fit" data-cap="Moodboard"><img src="img/cq-mood2.webp" alt="Moodboard : guitare posée sur un tapis persan" width="221" height="275" loading="lazy" decoding="async"></figure>
+            <figure class="z cover-fit" data-cap="Moodboard"><img src="img/cq-mood3.webp" alt="Moodboard : salon de musique au plafond en damier de bois" width="295" height="442" loading="lazy" decoding="async"></figure>
+          </div>
+        </div>
+        <div style="grid-area:text" class="text-rule rv"><p>Pensé comme un espace créatif dédié à la pratique musicale, Coco Quartier offre aux groupes un lieu pour répéter, écrire et créer ensemble. Favorisant un environnement propice à l’expérimentation et aux échanges, tout en intégrant un espace permettant aux artistes de présenter leurs nouveaux morceaux devant un public choisi.</p></div>
+        <div style="grid-area:chips" class="rv"><p class="lab">Palette</p><div class="chips"><i style="background:#A04608"></i><i style="background:#6C3822"></i><i style="background:#E4D6BB"></i><i style="background:#4F4719"></i></div></div>
+        <div style="grid-area:keys" class="rv"><p class="keys-t">Éléments clés</p><ul class="keys"><li>Qualité de captation</li><li>Circulation &amp; ergonomie</li><li>Confort &amp; concentration</li><li>Transmission maîtrisée</li><li>Matériel &amp; personnes</li></ul></div>
+        <figure style="grid-area:plan" class="plan-paper z rv" data-cap="Coco Quartier, plan"><img src="img/cq-plan.webp" alt="Plan d’aménagement de Coco Quartier, annoté en rouge" width="621" height="511" loading="lazy" decoding="async"><figcaption>Plan · Coco Quartier</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap sec">
+    <div class="cd-grid">
+      <figure class="z rv cover-fit" data-cap="Coco Dodo, chambre partagée" style="grid-row:span 2;min-height:420px"><img src="img/cd-dorm.webp" alt="Rendu de Coco Dodo : chambre aux lits superposés en bois, bureaux sous les fenêtres, lumière dorée" width="723" height="544" loading="lazy" decoding="async"></figure>
+      <div class="rv" style="grid-column:span 2;--d:.08s">
+        <h2 class="h2">Coco Dodo</h2>
+        <p class="kick">Habiter · Créer · Se retrouver</p>
+        <div class="g" style="grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);margin-top:28px">
+          <div class="text-rule"><p>Coco Dodo constitue l’espace de vie des artistes. Les logements sont conçus pour offrir un équilibre entre intimité, confort et vie collective, avec des espaces adaptés au repos, au travail et aux moments partagés au quotidien.</p></div>
+          <div><p class="keys-t">Éléments clés</p><ul class="keys"><li>Confort &amp; calme</li><li>Lisibilité &amp; simplicité</li><li>Vie collective fluide</li><li>Image du lieu</li></ul></div>
+        </div>
+      </div>
+      <div class="rv" style="grid-column:span 2;--d:.14s">
+        <p class="lab">Moodboard</p>
+        <div class="cd-mood">
+          <figure class="z cover-fit" data-cap="Moodboard"><img src="img/cd-mood1.webp" alt="Moodboard : bibliothèque et lanterne en papier" width="368" height="490" loading="lazy" decoding="async"></figure>
+          <figure class="z cover-fit" data-cap="Moodboard"><img src="img/cd-mood2.webp" alt="Moodboard : salon chaleureux à double hauteur" width="295" height="391" loading="lazy" decoding="async"></figure>
+          <figure class="z cover-fit" data-cap="Moodboard"><img src="img/cd-mood3.webp" alt="Moodboard : lampe orange sur un meuble hi-fi" width="295" height="459" loading="lazy" decoding="async"></figure>
+          <figure class="z cover-fit" data-cap="Moodboard"><img src="img/cd-mood4.webp" alt="Moodboard : peinture abstraite aux formes ondulées rouges et ocres" width="210" height="286" loading="lazy" decoding="async"></figure>
+          <figure class="z cover-fit" data-cap="Moodboard"><img src="img/cd-mood5.webp" alt="Moodboard : veinage de bois" width="221" height="437" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="chips" style="margin-top:16px"><i style="background:#D3710E"></i><i style="background:#E4D6BB"></i><i style="background:#9D5F2E"></i><i style="background:#3C0000"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="rh"><span>La Grande Coco</span><span><b>Maquettes &amp; plan</b></span><span>Coco Dodo</span></div></div>
+  <div class="wrap sec">
+    <div class="maq">
+      <div class="g">
+        <figure class="z rv" data-cap="Maquette"><img src="img/cd-maq1.webp" alt="Maquette blanche de l’immeuble, vue de façade" width="807" height="519" loading="lazy" decoding="async"></figure>
+        <figure class="z rv" style="--d:.1s" data-cap="Maquette"><img src="img/cd-maq2.webp" alt="Maquette blanche de l’immeuble, vue plongeante sur les toitures" width="852" height="447" loading="lazy" decoding="async"></figure>
+      </div>
+      <figure class="plan-paper z rv" style="--d:.15s" data-cap="Coco Dodo, plan"><img src="img/cd-plan.webp" alt="Plan d’aménagement de Coco Dodo, annoté en rouge" width="1782" height="1465" loading="lazy" decoding="async"><figcaption>Plan · Coco Dodo</figcaption></figure>
+    </div>
+  </div>
+  <div data-next></div>
+</article>
+
+<!-- ================= 2. VOIE 15 ================= -->
+<article class="view" id="v-voie-15" data-route="voie-15" aria-label="Voie 15">
+  <div class="opener v15-op">
+    <figure class="op-img z" data-cap="Voie 15, moodboard"><img src="img/v15-hero.webp" alt="Ambiance de référence : grand luminaire circulaire en verre ambré au-dessus d’une table ronde" width="663" height="994" loading="lazy" decoding="async"></figure>
+    <div class="op-rule"><div class="sws sw-wrap">
+      <div class="sw sq"><img src="img/v15-sw1.webp" alt="Échantillon : textile à motif terracotta" width="395" height="292" loading="lazy" decoding="async"></div>
+      <div class="sw sq"><img src="img/v15-sw4.webp" alt="Échantillon : enduit crème" width="224" height="224" loading="lazy" decoding="async"></div>
+      <div class="sw sq"><img src="img/v15-sw3.webp" alt="Échantillon : rideau en velours rouille" width="294" height="295" loading="lazy" decoding="async"></div>
+      <div class="sw sq"><img src="img/v15-sw2.webp" alt="Échantillon : textile bouclé blanc" width="228" height="214" loading="lazy" decoding="async"></div>
+      <div class="sw sq"><img src="img/v15-sw5.webp" alt="Échantillon : bois blond veiné" width="240" height="160" loading="lazy" decoding="async"></div>
+    </div></div>
+    <div class="op-text">
+      <h1 class="title anim"><span class="num">2.</span>Voie – 15</h1>
+      <p class="sub">Trois espaces – trois rythmes</p>
+      <div class="lede">
+        <p>Le projet de Voie 15 s’appuie sur un programme proposant trois ambiances de travail : silencieuse, collaborative et animée. Qui aujourd’hui sont peu lisibles dans l’espace.</p>
+        <p>L’intervention transforme ainsi l’architecture en un outil de perception, où chaque espace possède une identité propre et accompagne un rythme différent.<br><em>S’isoler. Échanger. Ralentir.</em></p>
+        <p>Matériaux, lumière et signalétique se combinent pour créer des transitions progressives et permettre à chacun de choisir intuitivement l’atmosphère qui correspond à son besoin et à sa manière de travailler.</p>
+      </div>
+      <div class="pe">
+        <div><h3>Programme</h3><ul><li>Coworking</li><li>Café / Restaurant</li><li>Réunions</li><li>Événements</li></ul></div>
+        <div><h3>Enjeux</h3><ul><li>Lisibilité</li><li>Modularité</li><li>Confort</li><li>Expérience</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap sec">
+    <p class="lab rv">Moodboard</p>
+    <div class="mood6 rv">
+      <figure class="z cover-fit" data-cap="Moodboard"><img src="img/v15-ref3.webp" alt="Référence : assises en bois et coussins ronds orangés" width="516" height="773" loading="lazy" decoding="async"></figure>
+      <figure class="z cover-fit" data-cap="Moodboard"><img src="img/v15-ref4.webp" alt="Référence : postes de travail devant des fenêtres cintrées" width="352" height="505" loading="lazy" decoding="async"></figure>
+      <figure class="z cover-fit" data-cap="Moodboard"><img src="img/v15-ref1.webp" alt="Référence : paroi en verre ambré cannelé" width="295" height="442" loading="lazy" decoding="async"></figure>
+      <figure class="z cover-fit" data-cap="Moodboard"><img src="img/v15-ref5.webp" alt="Référence : rideaux orangés et banquettes" width="410" height="615" loading="lazy" decoding="async"></figure>
+      <figure class="z cover-fit" data-cap="Moodboard"><img src="img/v15-ref6.webp" alt="Référence : plateau en bois sur tatami" width="368" height="491" loading="lazy" decoding="async"></figure>
+      <figure class="z cover-fit" data-cap="Moodboard"><img src="img/v15-ref2.webp" alt="Référence : niche en bois éclairée aux formes organiques" width="368" height="460" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="rh"><span>Voie 15</span><span><b>Contexte – Concept</b></span><span>Trois rythmes</span></div></div>
+  <div class="wrap sec">
+    <div class="cx">
+      <figure class="z rv" data-cap="Trois rythmes, un même lieu"><img src="img/v15-sketch.webp" alt="Croquis aquarellé de l’escalier de la Petite Ceinture menant à Voie 15" width="609" height="683" loading="lazy" decoding="async"><figcaption>Trois rythmes, un même lieu</figcaption></figure>
+      <div class="rv" style="--d:.08s">
+        <figure class="z" data-cap="Vue aérienne du site"><img src="img/v15-aerial.webp" alt="Vue aérienne illustrée de l’ancienne gare de Vaugirard entourée d’arbres" width="1012" height="559" loading="lazy" decoding="async"></figure>
+        <p style="margin:16px 0 0">Voie 15, ancienne gare de Vaugirard dans le XV<sup>e</sup> arrondissement de Paris, est aujourd’hui un espace de coworking installé dans un bâtiment au caractère architectural marqué.</p>
+      </div>
+      <div class="zones rv" style="--d:.16s">
+        <figure class="z" data-cap="Zonage, niveau R-1"><img src="img/v15-zones-r1.webp" alt="Plan du niveau inférieur avec une zone beige" width="1084" height="384" loading="lazy" decoding="async"></figure>
+        <figure class="z" data-cap="Zonage, rez-de-chaussée"><img src="img/v15-zones-rdc.webp" alt="Plan du rez-de-chaussée avec zones orangée et mauve" width="1089" height="624" loading="lazy" decoding="async"></figure>
+        <div class="legend">
+          <div><i style="background:#E8CEAB"></i><span><b>Ralentir</b><small>Espace apaisé</small></span></div>
+          <div><i style="background:#E1AE79"></i><span><b>Échanger</b><small>Espace collectif</small></span></div>
+          <div><i style="background:#B07675"></i><span><b>Concentration</b><small>Espace de travail individuel</small></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap sec" style="padding-top:0">
+    <div class="rythmes">
+      <div class="rythme rv" style="--c:#E8CEAB"><figure class="ci z" data-cap="Ralentir : introspection, informel, pause"><img src="img/v15-intro.webp" alt="Rendu de l’espace apaisé : tapis et banquettes basses, lumière tamisée" width="551" height="308" loading="lazy" decoding="async"></figure><ul><li>Introspection</li><li>Informel</li><li>Pause</li></ul></div>
+      <div class="rythme rv" style="--c:#E1AE79;--d:.1s"><figure class="ci z" data-cap="Échanger : collaboration, restauration, rencontre"><img src="img/v15-collab.webp" alt="Rendu de l’espace collectif : grande table en bois et chaises tapissées" width="597" height="422" loading="lazy" decoding="async"></figure><ul><li>Collaboration</li><li>Restauration</li><li>Rencontre</li></ul></div>
+      <div class="rythme rv" style="--c:#B07675;--d:.2s"><figure class="ci z" data-cap="Concentration : silence, retrait"><img src="img/v15-concent.webp" alt="Rendu de l’espace de concentration : alcôve, fenêtre cintrée et rideaux rouges" style="object-position:50% 70%" width="309" height="472" loading="lazy" decoding="async"></figure><ul><li>Concentration</li><li>Silence</li><li>Retrait</li></ul></div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="rh"><span>Voie 15</span><span><b>Le projet</b></span><span>Concentration · Collaboration · Pause</span></div></div>
+  <div class="wrap sec">
+    <div class="v15-proj">
+      <div class="text-rule rv"><p>Mon intention est de réorganiser l’espace de coworking pour faire coexister trois atmosphères structurant le projet : concentration, collaboration et pause.</p><p>Matériaux, lumière et mobilier construisent ces différentes identités tout en assurant une continuité entre les espaces. L’architecture devient un outil pour choisir son rythme de travail.</p></div>
+      <figure class="zoom z rv" style="aspect-ratio:16/9" data-cap="Voie 15, l’espace collectif"><img src="img/v15-render.webp" alt="Rendu principal : bar éclairé, longue table, alcôves en bois et rideaux rouille sous de grandes fenêtres cintrées" style="width:100%;height:100%;object-fit:cover" width="1045" height="738" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+  <div class="wrap sec" style="padding-top:0">
+    <div class="v15-plans">
+      <div class="g">
+        <figure class="z rv" data-cap="Plan R-1"><img src="img/v15-planr1.webp" alt="Plan R-1 coloré : sols en bois et tapis aux formes organiques" width="681" height="246" loading="lazy" decoding="async"><figcaption>Plan R-1</figcaption></figure>
+        <figure class="z rv" data-cap="Plan RDC"><img src="img/v15-planrdc.webp" alt="Plan du rez-de-chaussée coloré avec la terrasse plantée ondulante" width="699" height="353" loading="lazy" decoding="async"><figcaption>Plan RDC</figcaption></figure>
+      </div>
+      <figure class="z rv" style="--d:.06s" data-cap="Élévation, alcôve de concentration"><img src="img/v15-arch.webp" alt="Élévation d’une alcôve sous fenêtre cintrée, rideaux rouges et lampe verte" width="249" height="379" loading="lazy" decoding="async"></figure>
+      <div class="rv" style="--d:.12s">
+        <figure class="z" data-cap="Motif textile créé pour le projet"><img src="img/v15-textile.webp" alt="Motif textile terracotta aux formes répétées" width="439" height="323" loading="lazy" decoding="async"></figure>
+        <p style="margin:14px 0 0;text-align:justify">Motif textile créé par mes soins pour ce projet, à partir d’une macrophotographie prise dans les environs du bâtiment.</p>
+      </div>
+      <figure class="z rv" style="--d:.18s" data-cap="Fauteuils habillés du motif textile"><img src="img/v15-chairs.webp" alt="Deux fauteuils en bois tapissés du motif textile terracotta" width="420" height="288" loading="lazy" decoding="async"></figure>
+    </div>
+    <figure class="z rv" style="margin-top:clamp(20px,3vw,40px)" data-cap="Élévation intérieure"><img src="img/v15-elev.webp" alt="Élévation intérieure : fenêtres cintrées, tables et chaises rouges" style="width:100%" width="1016" height="172" loading="lazy" decoding="async"><figcaption>Élévation</figcaption></figure>
+  </div>
+  <div class="textile-band" style="background-image:url(img/v15-textile.webp)">
+    <div class="wrap"><div class="card rv"><div class="trio"><span>S’isoler.</span><span>Échanger.</span><span>Ralentir.</span></div></div></div>
+  </div>
+  <div data-next></div>
+</article>
+
+<!-- ================= 3. UNITÉ 01 ================= -->
+<article class="view" id="v-unite-01" data-route="unite-01" aria-label="Unité 01">
+  <div class="opener u-op">
+    <figure class="op-img z" data-cap="Unité 01"><img src="img/u01-hero.webp" alt="Le food truck Unité 01 : structure géodésique en tubes bleus et toile blanche sur remorque" width="1490" height="760" loading="lazy" decoding="async"></figure>
+    <div class="op-rule"><div class="sws sw-wrap">
+      <div class="sw ci"><img src="img/u01-sw1.webp" alt="Matériau : métal bleu brossé" width="296" height="148" loading="lazy" decoding="async"></div>
+      <div class="sw ci"><img src="img/u01-sw2.webp" alt="Matériau : acier brossé" width="138" height="138" loading="lazy" decoding="async"></div>
+      <div class="sw ci"><img src="img/u01-sw3.webp" alt="Matériau : toile beige tendue" width="137" height="128" loading="lazy" decoding="async"></div>
+      <div class="sw ci"><img src="img/u01-sw4.webp" alt="Matériau : carrelage métro blanc" width="164" height="166" loading="lazy" decoding="async"></div>
+    </div></div>
+    <div class="op-text">
+      <h1 class="title anim"><span class="num">3.</span>Unité 01</h1>
+      <p class="sub">Food truck itinérant – Cité des sciences et de l’industrie</p>
+      <div class="lede">
+        <p>Unité 01 est un food truck itinérant imaginé pour la Cité des sciences et de l’industrie.</p>
+        <p>Plus qu’un point de restauration, il devient un dispositif de communication et de découverte, invitant le public à explorer l’université de la Cité des sciences à travers une expérience culinaire immersive.</p>
+      </div>
+      <div class="pe">
+        <div><h3>Programme</h3><ul><li>Food truck itinérant</li><li>Restauration</li><li>Communication</li></ul></div>
+        <div><h3>Enjeux</h3><ul><li>Mobilité</li><li>Visibilité</li><li>Attractivité</li><li>Expérience</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="rh"><span>Unité 01</span><span><b>Le site · Références</b></span><span>Food truck – Cité des sciences</span></div></div>
+  <div class="wrap sec">
+    <div class="u-site">
+      <div class="rv">
+        <h2 class="h2">Le site</h2>
+        <p class="kick" style="margin-bottom:20px">Parc de la Villette, Paris</p>
+        <figure class="z" data-cap="Plan du Parc de la Villette, parcours du food truck"><img src="img/u01-site.webp" alt="Plan du Parc de la Villette avec la Cité des sciences et le parcours en pointillés" width="384" height="466" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="rv" style="--d:.08s">
+        <p class="lab">Références</p>
+        <div class="u-refs">
+          <figure class="z cover-fit" data-cap="Référence : nœud de structure tubulaire" style="aspect-ratio:1"><img src="img/u01-ref1.webp" alt="Référence : nœud sphérique reliant des tubes bleus" width="143" height="144" loading="lazy" decoding="async"></figure>
+          <figure class="z cover-fit" data-cap="Référence : la Géode" style="aspect-ratio:1"><img src="img/u01-ref2.webp" alt="Référence : la Géode, sphère miroir du Parc de la Villette" width="300" height="225" loading="lazy" decoding="async"></figure>
+          <figure class="z cover-fit" data-cap="Référence : structure métallique bleue et verrière" style="aspect-ratio:16/9"><img src="img/u01-ref3.webp" alt="Référence : charpente métallique bleue sous une verrière circulaire" width="600" height="360" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+      <div class="rv" style="--d:.16s">
+        <p class="lab">Matières</p>
+        <div class="u-sws">
+          <figure class="z cover-fit" data-cap="Métal bleu"><img src="img/u01-sw1.webp" alt="Métal bleu brossé" width="296" height="148" loading="lazy" decoding="async"></figure>
+          <figure class="z cover-fit" data-cap="Acier brossé"><img src="img/u01-sw2.webp" alt="Acier brossé" width="138" height="138" loading="lazy" decoding="async"></figure>
+          <figure class="z cover-fit" data-cap="Toile"><img src="img/u01-sw3.webp" alt="Toile beige tendue" width="137" height="128" loading="lazy" decoding="async"></figure>
+          <figure class="z cover-fit" data-cap="Carrelage"><img src="img/u01-sw4.webp" alt="Carrelage métro blanc" width="164" height="166" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><div class="rh"><span>Unité 01</span><span><b>Le projet</b></span><span>Mobilité · Visibilité</span></div></div>
+  <div class="bleed" style="margin-top:clamp(24px,3vw,40px)"><figure class="zoom z" data-cap="Unité 01, en service dans le parc"><img src="img/u01-render.webp" alt="Rendu : Unité 01 ouvert, comptoir en inox, tabourets et cuisinier, sur une pelouse du parc" width="894" height="456" loading="lazy" decoding="async"></figure><span class="cap">Unité 01 · Parc de la Villette</span></div>
+  <div class="wrap sec">
+    <div class="elev">
+      <figure class="z rv" data-cap="Élévation"><img src="img/u01-elev2.webp" alt="Élévation du food truck avec habillage coloré et silhouettes au comptoir" width="795" height="249" loading="lazy" decoding="async"><figcaption>Élévation</figcaption></figure>
+      <figure class="z rv" style="--d:.1s" data-cap="Élévation"><img src="img/u01-elev1.webp" alt="Élévation du food truck en niveaux de gris avec silhouettes" width="537" height="185" loading="lazy" decoding="async"><figcaption>Élévation</figcaption></figure>
+    </div>
+  </div>
+  <div class="wrap sec" style="padding-top:0">
+    <div class="u-last">
+      <figure class="z rv" data-cap="Plan du food truck"><img src="img/u01-plan.webp" alt="Plan intérieur du food truck : cuisine, plans de travail et comptoir" width="820" height="615" loading="lazy" decoding="async"><figcaption>Plan</figcaption></figure>
+      <figure class="z rv" style="--d:.1s" data-cap="Perspective"><img src="img/u01-persp.webp" alt="Perspective du food truck géodésique vu de trois quarts" width="504" height="321" loading="lazy" decoding="async"><figcaption>Perspective</figcaption></figure>
+    </div>
+  </div>
+  <div data-next></div>
+</article>
+
+<!-- ================= 4. LA MUE ================= -->
+<article class="view mue" id="v-la-mue" data-route="la-mue" aria-label="La Mue">
+  <div class="opener">
+    <figure class="op-img z" data-cap="La Mue"><img src="img/mue-hero.webp" alt="Bougeoir La Mue en céramique émaillée blanche et rouge, bougie allumée, dans un restaurant sombre" width="743" height="922" loading="lazy" decoding="async"></figure>
+    <div class="op-rule"><div class="sws sw-wrap">
+      <div class="sw ci"><img src="img/mue-sw1.webp" alt="Matière : papier fibreux" width="216" height="288" loading="lazy" decoding="async"></div>
+      <div class="sw ci"><img src="img/mue-sw2.webp" alt="Matière : céramique émaillée rouge" width="203" height="221" loading="lazy" decoding="async"></div>
+    </div></div>
+    <div class="op-text">
+      <h1 class="title anim"><span class="num">4.</span>La Mue</h1>
+      <p class="sub">Bougeoir – Transformation par combustion</p>
+      <div class="lede">
+        <p>La Mue explore la transformation de la matière à travers le feu. Le bougeoir prend la forme d’une chrysalide fragile en papier destinée à se consumer, progressivement au contact de la flamme laissant apparaître une structure en céramique émaillée, durable et colorée.</p>
+        <p>Le projet met en scène un jeu de dualité où la flamme devient l’acteur de l’objet, transformant son apparence, au fil du temps et faisant de son utilisation un véritable rituel.</p>
+      </div>
+      <div class="pe">
+        <div><h3>Programme</h3><ul><li>Bougeoir évolutif</li><li>Transformation par combustion</li><li>Révélation d’une structure en céramique</li></ul></div>
+        <div><h3>Enjeux</h3><ul><li>Transformation</li><li>Éphémérité</li><li>Dualité</li><li>Expérience</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap sec">
+    <div class="mue-a">
+      <figure class="z rv" data-cap="La Mue, sur un comptoir en granit"><img src="img/mue-granite.webp" alt="Le bougeoir sur un comptoir en granit noir étincelant, flamme allumée" width="471" height="633" loading="lazy" decoding="async"></figure>
+      <div class="rv" style="--d:.1s">
+        <h2 class="h2">Un objet en transformation</h2>
+        <p class="pq" style="margin-top:30px">Un jeu entre fragilité et permanence, disparition et révélation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="rh"><span>La Mue</span><span><b>Processus de transformation</b></span><span>Fragilité · Permanence</span></div></div>
+  <div class="wrap steps" id="steps">
+    <div class="steps-in">
+      <div class="st-txt">
+        <div class="st on" data-step="0"><i>i.</i><h3>Allumage de l’enveloppe en papier</h3></div>
+        <div class="st" data-step="1"><i>ii.</i><h3>Combustion</h3></div>
+        <div class="st" data-step="2"><i>iii.</i><h3>Révélation de la céramique</h3></div>
+      </div>
+      <div class="st-pic"><span class="glow"></span>
+        <img class="on" src="img/mue-step1.webp" alt="Dessin : allumage de l’enveloppe en papier" data-i="0" width="540" height="612" loading="lazy" decoding="async">
+        <img src="img/mue-step2.webp" alt="Dessin : combustion de l’enveloppe" data-i="1" width="186" height="352" loading="lazy" decoding="async">
+        <img src="img/mue-step3.webp" alt="Dessin : révélation de la céramique rouge" data-i="2" width="126" height="306" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="st-mobile">
+      <figure><img src="img/mue-step1.webp" alt="Dessin : allumage de l’enveloppe en papier" width="540" height="612" loading="lazy" decoding="async"><figcaption>i. Allumage de l’enveloppe en papier</figcaption></figure>
+      <figure><img src="img/mue-step2.webp" alt="Dessin : combustion" width="186" height="352" loading="lazy" decoding="async"><figcaption>ii. Combustion</figcaption></figure>
+      <figure><img src="img/mue-step3.webp" alt="Dessin : révélation de la céramique" width="126" height="306" loading="lazy" decoding="async"><figcaption>iii. Révélation de la céramique</figcaption></figure>
+    </div>
+  </div>
+  <div class="wrap sec">
+    <div class="objs">
+      <figure class="z rv" data-cap="La Mue, vue de profil"><img src="img/mue-obj2.webp" alt="Le bougeoir en céramique, vue de profil sans bougie" width="137" height="260" loading="lazy" decoding="async"></figure>
+      <figure class="z rv" style="--d:.1s" data-cap="La Mue, avec bougie"><img src="img/mue-obj1.webp" alt="Le bougeoir en céramique avec sa bougie" width="149" height="287" loading="lazy" decoding="async"></figure>
+      <figure class="z rv" style="--d:.2s" data-cap="La Mue, vue de trois quarts"><img src="img/mue-obj3.webp" alt="Le bougeoir en céramique, vue de trois quarts" width="125" height="250" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+  <div class="wrap sec" style="padding-top:0">
+    <figure class="lines-paper z rv" data-cap="Dessins de recherche"><img src="img/mue-lines.webp" alt="Six dessins au trait du bougeoir : profils, face, dessus et enveloppe" style="margin:auto" width="676" height="615" loading="lazy" decoding="async"></figure>
+  </div>
+  <div class="bleed"><figure class="zoom z" data-cap="La Mue, mise en scène"><img src="img/mue-bar.webp" alt="Mise en scène au bar : bougeoirs allumés sur un comptoir rouge, silhouettes dessinées en lumière" style="object-position:50% 80%" width="707" height="971" loading="lazy" decoding="async"></figure></div>
+  <div data-next></div>
+</article>
+
+<!-- ================= 5. HAN ================= -->
+<article class="view" id="v-han" data-route="han" aria-label="Han">
+  <div class="han-hero">
+    <figure class="zoom z" data-cap="Han, module Carré dans un jardin"><img src="img/han-hero.webp" alt="Une femme et une enfant enlacées sur le banc Carré de la collection Han, bois et mousse, dans une allée d’arbres" width="1596" height="985" loading="lazy" decoding="async"></figure>
+    <div class="han-card">
+      <h1 class="title anim"><span class="num">5.</span>Han</h1>
+      <p class="sub" style="margin-bottom:0">Une écriture à habiter</p>
+    </div>
+  </div>
+  <div class="wrap sec">
+    <div class="han-intro">
+      <div class="lede rv">
+        <p>HAN transpose les formes du hangeul en une collection de mobilier de jardin. Lignes, angles, cercle et carré deviennent des lieux de pause, de lecture et de rencontre.</p>
+        <p>Le bois accueille le corps. Le mosscrete relie les assises au paysage par sa texture végétale. Six modules se combinent pour composer différents usages.</p>
+      </div>
+      <div class="han-sws rv" style="--d:.08s">
+        <div class="sw ci"><img src="img/han-sw1.webp" alt="Matière : lattes de bois" width="320" height="100" loading="lazy" decoding="async"></div>
+        <div class="sw ci"><img src="img/han-sw2.webp" alt="Matière : mosscrete, béton végétalisé de mousse" width="125" height="105" loading="lazy" decoding="async"></div>
+      </div>
+      <div class="pe rv" style="--d:.14s;margin:0;grid-template-columns:1fr">
+        <div><h3>Programme</h3><ul><li>Mobilier urbain</li><li>Assises individuelles et collectives</li></ul></div>
+        <div><h3>Enjeux</h3><ul><li>Écriture / Usage / Rencontre</li><li>Matière / Paysage</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="rh" style="border:0;padding-bottom:0"><span></span><span></span><span></span></div>
+    <h2 class="h2 ink rv" style="text-transform:uppercase">Une collection, six modules</h2>
+    <p class="sub rv" style="margin:.3em 0 1em;font-style:italic">Le signe devient assise.</p>
+    <div class="mods" id="mods"></div>
+  </div>
+  <div class="wrap sec"><p class="pq rv" style="text-align:center;color:var(--ox)">Le signe devient assise.</p></div>
+  <div data-next></div>
+</article>
+
+<!-- ================= HORS-SÉRIE ================= -->
+<article class="view" id="v-experimentation" data-route="experimentation" aria-label="Expérimentation artistique">
+  <div class="hs-op">
+    <div class="coll">
+      <figure class="z" data-cap="Étude d’après modèle vivant"><img src="img/dr-3.webp" alt="Dessin au crayon d’un modèle assis en tailleur sur un tabouret" width="968" height="1376" loading="lazy" decoding="async"></figure>
+      <figure class="c2 z" data-cap="Hanging Organism"><img src="img/hang-alpha.webp" alt="Hanging Organism, porte-manteau sculptural en carton" width="668" height="607" loading="lazy" decoding="async"></figure>
+      <figure class="c3 z" data-cap="Saint-Sabin, la salle à manger"><img src="img/ss-dining2.webp" alt="Salle à manger de l’appartement Saint-Sabin, table ovale en bois et chaises crème" width="1060" height="728" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="op-rule"></div>
+    <div class="op-text nosw">
+      <p class="kick" style="margin:0 0 18px;color:var(--ox)">Hors-série</p>
+      <h1 class="title anim">Expérimen&shy;tation artistique</h1>
+      <p class="sub" style="text-transform:uppercase;letter-spacing:.05em;font-size:18px">Recherche – Création – Expérimentation</p>
+      <div class="lede"><p>Une sélection de projets personnels développés autour du dessin, de l’objet et de l’expérimentation. Ces recherches me permettent d’explorer librement les formes, les matières et les techniques, tout en affirmant progressivement mon univers créatif en développant de nouvelles compétences.</p></div>
+      <div class="pe" style="grid-template-columns:1fr">
+        <div><h3>Dans ce hors-série</h3><ul><li><a href="#hs-a" data-jump>A. Hanging Organism</a></li><li><a href="#hs-b" data-jump>B. Saint-Sabin</a></li><li><a href="#hs-c" data-jump>C. Études d’après modèle vivant</a></li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" id="hs-a"><div class="rh"><span>Hors-série</span><span><b>A · Hanging Organism</b></span><span>Objet</span></div></div>
+  <div class="wrap sec">
+    <div class="ho">
+      <div class="rv">
+        <h2 class="h2" style="text-transform:uppercase;font-size:clamp(38px,3.7vw,62px)">Hanging Organism</h2>
+        <p class="kick" style="margin-bottom:22px">Un objet entre structure et créature</p>
+        <div class="lede">
+          <p>Ce projet explore la rencontre entre l’organique et le mécanique à travers la conception d’un porte-manteau en carton.</p>
+          <p>Inspiré par l’esthétique biomécanique de H.R. Giger, l’objet combine structures rigides, formes nerveuses et découpes anatomiques.</p>
+          <p>L’objectif est de transformer un matériau simple et recyclé en une pièce sculpturale, à la fois fonctionnelle et expressive.</p>
+        </div>
+        <ul class="tags caps"><li>Organique</li><li>Mécanique</li><li>Recyclé</li><li>Fonctionnel</li><li>Sculptural</li></ul>
+      </div>
+      <div class="g rv" style="--d:.08s">
+        <figure class="z" data-cap="Hanging Organism, rendu"><img src="img/hang-render.webp" alt="Rendu du porte-manteau Hanging Organism, découpes acérées et crochets" width="589" height="538" loading="lazy" decoding="async"></figure>
+        <figure class="z" data-cap="Dessin technique"><img src="img/hang-tech.webp" alt="Dessin technique coté du porte-manteau, vues de face, de côté et de dessus" width="817" height="597" loading="lazy" decoding="async"><figcaption>Dessin technique</figcaption></figure>
+        <figure class="z" data-cap="Dessin au trait" style="max-width:72%;margin-inline:auto"><img src="img/hang-line.webp" alt="Dessin au trait de la silhouette découpée du porte-manteau" width="567" height="356" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="ho-r rv" style="--d:.16s">
+        <figure class="z" data-cap="Hanging Organism, en situation"><img src="img/hang-situ1.webp" alt="Le porte-manteau installé dans une entrée, manteaux et écharpe suspendus" width="468" height="654" loading="lazy" decoding="async"></figure>
+        <figure class="z" data-cap="Hanging Organism, en situation"><img src="img/hang-situ2.webp" alt="Le porte-manteau sur un mur près d’une applique et d’un miroir cintré" width="713" height="526" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" id="hs-b"><div class="rh"><span>Hors-série</span><span><b>B · Saint-Sabin</b></span><span>Appartement, Paris</span></div></div>
+  <div class="wrap sec">
+    <div class="ss">
+      <figure class="z rv" data-cap="Saint-Sabin, le salon"><img src="img/ss-salon.webp" alt="Le salon : bibliothèques encastrées au fond bordeaux, cheminée, miroir doré, table basse ronde" width="942" height="601" loading="lazy" decoding="async"><figcaption>Le salon</figcaption></figure>
+      <figure class="z rv" style="--d:.1s" data-cap="Saint-Sabin, l’entrée"><img src="img/ss-entree.webp" alt="L’entrée : couloir en parquet, rangements en bois, console et miroir ovale" width="488" height="702" loading="lazy" decoding="async"><figcaption>L’entrée</figcaption></figure>
+      <div class="rv">
+        <h2 class="h2" style="text-transform:uppercase">Saint-Sabin</h2>
+        <p style="max-width:64ch;margin-top:16px">En parallèle de mes études, je participe actuellement à un projet d’aménagement d’un appartement pour un particulier à Paris, en accompagnant une architecte d’intérieur. Cette expérience me permet de me former au contact du terrain, de développer mes compétences et de découvrir les différentes étapes d’un projet concret.</p>
+      </div>
+      <figure class="z plan-paper rv" style="--d:.1s" data-cap="Saint-Sabin, plan"><img src="img/ss-plan.webp" alt="Plan de l’appartement Saint-Sabin" width="741" height="420" loading="lazy" decoding="async"><figcaption>Plan</figcaption></figure>
+    </div>
+  </div>
+  <div class="wrap sec" style="padding-top:0">
+    <div class="ss2">
+      <figure class="z rv" data-cap="Saint-Sabin, la salle à manger"><img src="img/ss-dining.webp" alt="La salle à manger : étagères murales, table ovale en noyer, chaises crème, suspensions globes" width="832" height="594" loading="lazy" decoding="async"><figcaption>La salle à manger</figcaption></figure>
+      <div class="bath">
+        <figure class="z rv" style="--d:.1s" data-cap="Saint-Sabin, la salle de bains"><img src="img/ss-shower.webp" alt="La douche : carrelage vertical bronze entre deux portes blanches" width="642" height="565" loading="lazy" decoding="async"></figure>
+        <figure class="z rv" style="--d:.16s" data-cap="Saint-Sabin, la salle de bains"><img src="img/ss-bath.webp" alt="Le meuble vasque en bois sous la fenêtre" width="836" height="471" loading="lazy" decoding="async"><figcaption>La salle de bains</figcaption></figure>
+      </div>
+      <figure class="wide zoom z rv" data-cap="Saint-Sabin, la salle à manger vue depuis le salon"><img src="img/ss-dining2.webp" alt="La salle à manger vue depuis le salon, canapé bouclé au premier plan" style="width:100%;height:100%;object-fit:cover;object-position:50% 60%" width="1060" height="728" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+
+  <div class="wrap" id="hs-c"><div class="rh"><span>Hors-série</span><span><b>C · Modèle vivant</b></span><span>Dessin</span></div></div>
+  <div class="wrap sec">
+    <h2 class="h2 rv" style="text-transform:uppercase;margin-bottom:clamp(20px,3vw,44px)">Études d’après modèle vivant</h2>
+    <div class="draw">
+      <figure class="z rv" data-cap="Étude d’après modèle vivant"><img src="img/dr-1.webp" alt="Dessin au crayon : modèle assise, accoudée, et étude d’yeux" width="1024" height="1464" loading="lazy" decoding="async"></figure>
+      <figure class="z rv" style="--d:.08s" data-cap="Étude d’après modèle vivant"><img src="img/dr-3.webp" alt="Dessin au crayon : modèle assise en tailleur sur un tabouret" width="968" height="1376" loading="lazy" decoding="async"></figure>
+      <figure class="z rv" style="--d:.16s" data-cap="Étude d’après modèle vivant"><img src="img/dr-4.webp" alt="Dessin au crayon : modèle masculin assis" width="832" height="1184" loading="lazy" decoding="async"></figure>
+    </div>
+    <figure class="z rv" style="max-width:620px;margin:clamp(24px,4vw,60px) auto 0" data-cap="Dessin"><img src="img/dr-2.webp" alt="Dessin au feutre noir d’un édifice à coupole et colonnade" width="1144" height="823" loading="lazy" decoding="async"></figure>
+  </div>
+  <div data-next></div>
+</article>
+
+<!-- ================= À PROPOS ================= -->
+<section class="view" id="v-a-propos" data-route="a-propos" aria-label="À propos">
+  <div class="wrap">
+    <div class="ab">
+      <div class="rv">
+        <h1 class="ab-h anim">Mon profil</h1>
+        <div class="portrait"><img src="img/portrait.webp" alt="Portrait de Lou Nollent" width="544" height="723" loading="lazy" decoding="async"></div>
+        <div class="idcard">
+          <h2>Lou Nollent</h2>
+          <p>Étudiante en architecture d’intérieur<br>Académie Charpentier, quatrième année.</p>
+          <p class="ox">Paris 2<sup>e</sup> · lou.nollent@hotmail.fr</p>
+        </div>
+      </div>
+      <div class="ab-t rv" style="--d:.1s">
+        <p class="ab-q">Je conçois l’espace comme un récit.</p>
+        <p>Étudiante en architecture intérieure et design à Paris, je m’intéresse particulièrement à la création d’espaces qui racontent une histoire et suscitent une émotion.</p>
+        <p>Entre architecture, scénographie et design, j’aime explorer la manière dont un lieu peut devenir une véritable expérience. La lumière, les matières, les proportions, les circulations et les détails sont pour moi autant d’éléments permettant de construire une atmosphère et de faire naître un imaginaire.</p>
+        <p>Inspirée par le cinéma, le théâtre, l’architecture et les univers narratifs, mon approche mêle recherche, composition spatiale et sensibilité esthétique.</p>
+        <p>Je souhaite aujourd’hui développer cette approche à travers des projets liant espace, récit et mise en scène.</p>
+        <ul class="terr" aria-label="Territoires de prédilection"><li>Émotion</li><li>Storytelling</li><li>Expérience spatiale</li><li>Retail design</li><li>Scénographie</li></ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:34px">
+          <a class="btn" href="docs/Lou-Nollent-CV.pdf" target="_blank" rel="noopener" data-dl="Lou-Nollent-CV.pdf">Télécharger le CV <span aria-hidden="true">↓</span></a>
+          <a class="btn" href="#contact">Me contacter <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec" style="padding-top:clamp(60px,8vw,120px)">
+      <div class="cv-head rv"><span class="big">CV</span><p>Architecture d’intérieur &amp; design</p></div>
+      <div class="cvx rv">
+        <div>
+          <h3>Formation</h3>
+          <div class="it"><small>2023 – 2026</small><b>Académie Charpentier · Paris</b><span>Formation en architecture d’intérieur et design.</span></div>
+          <div class="it"><small>2022 – 2023</small><b>Penninghen · Paris</b><span>Année préparatoire en école de direction artistique et d’architecture d’intérieur.</span></div>
+          <div class="it"><small>2022</small><b>Lycée Gusdorf · Paris</b><span>Baccalauréat.</span></div>
+          <h3>Logiciels</h3>
+          <dl class="lv"><dt>AutoCAD</dt><dd>Confirmé</dd><dt>InDesign</dt><dd>Intermédiaire</dd><dt>Photoshop</dt><dd>Débutant</dd><dt>Rhino</dt><dd>Débutant</dd><dt>Twinmotion</dt><dd>Débutant</dd></dl>
+          <h3>Langues</h3>
+          <dl class="lv"><dt>Français</dt><dd>Langue maternelle</dd><dt>Anglais</dt><dd>C1</dd></dl>
+        </div>
+        <div class="vr" aria-hidden="true"></div>
+        <div>
+          <h3>Expériences professionnelles</h3>
+          <div class="it"><small>Juin – septembre 2025</small><b>Disney World · Orlando, États-Unis</b><span>CDD dans le cadre du Disney International Program.</span></div>
+          <div class="it"><small>Avril – juin 2025</small><b>Salon Camélia · Coffee shop</b><span>Serveuse · Temps partiel.</span></div>
+          <div class="it"><small>Mai 2024 – janvier 2025</small><b>Café Noir · Paris</b><span>Serveuse / Bartender · Temps partiel.</span></div>
+          <div class="it"><small>2018 – 2023</small><b>Kinougarde</b><span>Garde d’enfants.</span></div>
+          <h3>Engagement associatif</h3>
+          <div class="it"><b>Depuis 2017 · Banque alimentaire, Paris</b><span>Participation annuelle à la collecte nationale de novembre.</span></div>
+          <h3>Centres d’intérêt</h3>
+          <dl class="lv" style="grid-template-columns:auto 1fr"><dt>Architecture</dt><dd>Art déco, Art nouveau et gothique.</dd><dt>Littérature</dt><dd>Diversité des genres et des auteurs.</dd><dt>Voyages</dt><dd>Découverte de cultures et de lieux.</dd></dl>
+        </div>
+      </div>
+    </div>
+    <footer class="colo" data-colo></footer>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="view" id="v-contact" data-route="contact" aria-label="Contact">
+  <div class="ct">
+    <div class="wrap" style="width:100%">
+      <h1 class="ct-h anim">Contact</h1>
+      <div class="ct-grid">
+        <div>
+          <a class="mail" href="mailto:lou.nollent@hotmail.fr">lou.nollent@hotmail.fr</a>
+          <p>Lou Nollent · Paris 2<sup>e</sup><br>Étudiante en architecture d’intérieur, Académie Charpentier, quatrième année.</p>
+          <div class="ct-acts">
+            <button class="btn lt" id="copyMail" type="button">Copier l’adresse</button>
+            <a class="btn lt" href="mailto:lou.nollent@hotmail.fr">Écrire un e-mail <span class="arrow">→</span></a>
+          </div>
+        </div>
+        <div class="dls">
+          <a class="dl" href="docs/Lou-Nollent-CV.pdf" target="_blank" rel="noopener" data-dl="Lou-Nollent-CV.pdf"><span>Curriculum vitæ<small>PDF · 1 page</small></span><span class="ico" aria-hidden="true">↓</span></a>
+          <a class="dl" href="docs/Lou-Nollent-Portfolio-2026.pdf" target="_blank" rel="noopener" data-dl="Lou-Nollent-Portfolio-2026.pdf"><span>Portfolio 2026<small>PDF · 22 pages · 7,9 Mo</small></span><span class="ico" aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="pills-mini" id="pillsMini"></div>
+    </div>
+    <div class="wrap ct-foot" style="width:100%"><footer class="colo" data-colo style="border-color:rgba(242,242,242,.4)"></footer></div>
+  </div>
+</section>
+</main>
+
+<div class="curtain" id="curtain" aria-hidden="true"><div><b id="cNum"></b><span id="cTit"></span></div></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visionneuse d’images">
+  <div class="lb-top"><span id="lbCount"></span><button class="lb-b" id="lbClose">Fermer ✕</button></div>
+  <div class="lb-st"><button class="lb-b" id="lbPrev" aria-label="Image précédente">←</button><img id="lbImg" alt=""><button class="lb-b" id="lbNext" aria-label="Image suivante">→</button></div>
+  <p class="lb-cap" id="lbCap"></p>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+{
+const P=[
+ {id:'la-grande-coco',n:'1.',t:'La Grande Coco',s:'Réinventer l’habitat collectif autour de la pratique musicale.',c:'Habitat collectif',c2:'Résidences musicales',img:'cq-drums',pos:'40% 50%',feat:'',p:'05'},
+ {id:'voie-15',n:'2.',t:'Voie 15',s:'Trois espaces – trois rythmes',c:'Coworking',c2:'Café / Restaurant',img:'v15-render',pos:'30% 50%',feat:'alt',p:'08'},
+ {id:'unite-01',n:'3.',t:'Unité 01',s:'Food truck itinérant – Cité des sciences et de l’industrie',c:'Food truck itinérant',c2:'Restauration',img:'u01-hero',pos:'30% 50%',feat:'wide',p:'11'},
+ {id:'la-mue',n:'4.',t:'La Mue',s:'Bougeoir – Transformation par combustion',c:'Bougeoir évolutif',c2:'Objet',img:'mue-hero',pos:'45% 50%',feat:'tall',p:'13'},
+ {id:'han',n:'5.',t:'Han',s:'Une écriture à habiter',c:'Mobilier urbain',c2:'Six modules',img:'han-hero',pos:'38% 50%',feat:'alt',p:'15'}
+];
+const HS=[
+ {id:'experimentation',a:'hs-a',n:'A.',t:'Hanging Organism',s:'Un objet entre structure et créature',c:'Objet',img:'hang-situ1'},
+ {id:'experimentation',a:'hs-b',n:'B.',t:'Saint-Sabin',s:'Aménagement d’un appartement, Paris',c:'Expérience terrain',img:'ss-salon'},
+ {id:'experimentation',a:'hs-c',n:'C.',t:'Modèle vivant',s:'Études d’après modèle vivant',c:'Dessin',img:'dr-3'}
+];
+const MODS=[['01.','Trait','A-A'],['02.','Repos','B-B'],['03.','Angle','C-C'],['04.','Cercle','D-D'],['05.','Carré','E-E'],['06.','Petit carré','F-F']];
+const ORDER=['la-grande-coco','voie-15','unite-01','la-mue','han','experimentation'];
+const NAMES={couverture:['Portfolio 2026','Architecture intérieure'],sommaire:['Sommaire','Cinq projets · un hors-série'],'a-propos':['Mon profil','À propos'],contact:['Contact','CV & portfolio'],experimentation:['Hors-série','Expérimentation artistique']};
+P.forEach(p=>NAMES[p.id]=[p.n,p.t]);
+const $=s=>document.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.documentElement.classList.add('js');
+
+/* split animated titles into words */
+$$('.anim').forEach(h=>{let i=0;const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.append(w);return}const o=document.createElement('span');o.className='w';const s=document.createElement('span');s.textContent=w;s.style.setProperty('--i',i++);o.append(s);f.append(o)});c.replaceWith(f)}else if(c.nodeType===1&&!c.classList.contains('w'))walk(c)})};walk(h)});
+
+/* cover pills, features, sommaire, menus */
+$('#pills').innerHTML=P.map((p,i)=>`<a class="pl" href="#${p.id}" style="--i:${i}"><span class="pl-img"><img src="img/${p.img}.webp" alt="" style="object-position:${p.pos}" fetchpriority="high"></span><span class="pl-cap"><i>${p.n}</i>${p.t}</span></a>`).join('');
+$('#pillsMini').innerHTML=P.map(p=>`<a href="#${p.id}" aria-label="${p.t}"><img src="img/${p.img}.webp" alt="" loading="lazy" style="object-position:${p.pos}"></a>`).join('');
+$('#feats').innerHTML=P.map(p=>`<a class="feat ${p.feat} rv" href="#${p.id}"><figure class="fi zoom"><img src="img/${p.img}.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:${p.pos}"></figure><div class="ft"><span class="fnum">${p.n}</span><div><h3>${p.t}</h3><p>${p.s}</p></div><span class="more">Lire le projet <span class="arrow">→</span></span></div></a>`).join('');
+const row=(p,hash)=>`<li><a class="row" href="#${hash}" data-img="${p.img}" data-cap="${p.t}"><span class="n">${p.n}</span><span class="t">${p.t}<span class="s">${p.s}</span></span><span class="c"><b>${p.p?'p. '+p.p:''}</b>${p.c}${p.c2?'<br>'+p.c2:''}</span></a></li>`;
+$('#rows').innerHTML=P.map(p=>row(p,p.id)).join('');
+$('#rowsHs').innerHTML=HS.map(h=>row(h,h.id+'" data-anchor="'+h.a)).join('');
+$('#pp').innerHTML=[...P,...HS].map(p=>`<img src="img/${p.img}.webp" alt="" loading="lazy" data-k="${p.img}">`).join('');
+$('#ovList').innerHTML=`<a href="#couverture"><i>—</i>Couverture</a><a href="#sommaire"><i>—</i>Sommaire</a>`+P.map(p=>`<a href="#${p.id}"><i>${p.n}</i>${p.t}</a>`).join('')+`<a href="#experimentation"><i>HS</i>Hors-série</a><a href="#a-propos"><i>—</i>À propos</a><a href="#contact"><i>—</i>Contact</a>`;
+$('#mods').innerHTML=MODS.map((m,i)=>`<div class="mod rv" style="--d:${(i%3)*.08}s"><h3><i>${m[0]}</i>${m[1]}</h3><figure class="rnd z" data-cap="Module ${m[1]}"><img src="img/han-m${i+1}.webp" alt="Module ${m[1]} de la collection Han, rendu" loading="lazy"></figure><div class="dw"><figure class="z" data-cap="Module ${m[1]}, plan"><img src="img/han-m${i+1}p.webp" alt="Plan du module ${m[1]}" loading="lazy"><figcaption>Plan</figcaption></figure><figure class="z" data-cap="Module ${m[1]}, coupe ${m[2]}"><img src="img/han-m${i+1}c.webp" alt="Coupe ${m[2]} du module ${m[1]}" loading="lazy"><figcaption>Coupe ${m[2]}</figcaption></figure></div></div>`).join('');
+$$('[data-colo]').forEach(f=>f.innerHTML=`<span>Lou Nollent · Architecture intérieure · Portfolio 2026</span><span><a href="#sommaire">Sommaire</a> · <a href="#a-propos">À propos</a> · <a href="#contact">Contact</a></span>`);
+$$('[data-next]').forEach(el=>{const id=el.closest('.view').dataset.route,k=ORDER.indexOf(id),nx=ORDER[(k+1)%ORDER.length];const p=P.find(x=>x.id===nx);const lab=p?p.n+' '+p.t:'Hors-série';const img=p?p.img:'hang-situ1';el.outerHTML=`<a class="next" href="#${nx}"><div class="wrap"><div><small>Chapitre suivant</small><strong>${lab}</strong></div><span class="np"><img src="img/${img}.webp" alt="" loading="lazy"></span></div></a><div class="wrap back"><a href="#sommaire">← Retour au sommaire</a><a href="#contact">Contact &amp; CV</a></div>`});
+
+/* sommaire preview */
+const pp=$('#pp'),ppCap=$('#ppCap');
+const showPrev=a=>{$$('img',pp).forEach(i=>i.classList.toggle('on',i.dataset.k===a.dataset.img));ppCap.textContent=a.dataset.cap};
+$$('.row').forEach(a=>{a.addEventListener('mouseenter',()=>showPrev(a));a.addEventListener('focus',()=>showPrev(a))});
+showPrev($('.row'));
+
+/* reveal */
+const io='IntersectionObserver' in window&&!RM?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px',threshold:.01}):null;
+$$('.rv').forEach(el=>io?io.observe(el):el.classList.add('in'));
+
+/* routing + chapter curtain */
+const views=$$('.view'),routes=views.map(v=>v.dataset.route);
+let cur=null,busy=false,pendingAnchor=null;
+const show=r=>{views.forEach(v=>v.classList.toggle('on',v.dataset.route===r));document.body.className='r-'+r;cur=r;
+ const nm=NAMES[r]||NAMES.couverture;$('#rhead').innerHTML=`<b>${nm[0]}</b>${nm[1]}`;
+ document.title=r==='couverture'?'Lou Nollent Portfolio 2026':`${nm[1]} · Lou Nollent`;
+ $$('[data-nav]').forEach(a=>a.toggleAttribute('aria-current',a.dataset.nav===r)&&a.setAttribute('aria-current','page'));
+ const v=$('#v-'+r);$$('.anim .w>span',v).forEach(s=>{s.style.animation='none';s.offsetHeight;s.style.animation=''});
+ if(pendingAnchor){const t=document.getElementById(pendingAnchor);pendingAnchor=null;if(t){setTimeout(()=>t.scrollIntoView(),20);return}}
+ window.scrollTo(0,0);onScroll()};
+const route=()=>{let r=(location.hash||'').slice(1);if(!routes.includes(r)){const t=r&&document.getElementById(r);if(t&&t.closest('.view')){pendingAnchor=r;r=t.closest('.view').dataset.route;if(r===cur){t.scrollIntoView({behavior:RM?'auto':'smooth'});pendingAnchor=null;return}}else r='couverture'}
+ closeOv();
+ if(r===cur)return;
+ if(cur===null||RM||busy){show(r);return}
+ busy=true;const c=$('#curtain'),nm=NAMES[r]||['',''];
+ const isCh=ORDER.includes(r);$('#cNum').textContent=isCh?(nm[0]==='Hors-série'?'HS':nm[0]):'';$('#cTit').textContent=isCh?nm[1]:nm[0];
+ c.classList.remove('out');c.classList.add('go');
+ setTimeout(()=>{show(r);c.classList.remove('go');c.classList.add('out');setTimeout(()=>{c.classList.remove('out');busy=false},620)},isCh?560:430)};
+addEventListener('hashchange',route);
+document.addEventListener('click',e=>{const a=e.target.closest('a[data-anchor]');if(a){pendingAnchor=a.dataset.anchor}const j=e.target.closest('a[data-jump]');if(j){e.preventDefault();const t=document.getElementById(j.getAttribute('href').slice(1));t&&t.scrollIntoView({behavior:RM?'auto':'smooth'})}});
+
+/* scroll: progress bar, zoom images, la mue steps */
+const bar=$('#bar');let tick=false;
+function onScroll(){tick=false;const h=document.documentElement,max=h.scrollHeight-innerHeight;bar.style.width=(max>0?scrollY/max*100:0)+'%';
+ if(RM)return;const vh=innerHeight,v=$('.view.on');if(!v)return;
+ $$('.zoom',v).forEach(z=>{const r=z.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;const p=Math.min(1,Math.max(0,(vh-r.top)/(vh+r.height)));const im=z.querySelector('img');if(im)im.style.setProperty('--s',(1.13-.13*p).toFixed(4))});
+ if(cur==='la-mue'){const sts=$$('.st',v);let k=0;sts.forEach((s,i)=>{if(s.getBoundingClientRect().top<vh*.55)k=i});sts.forEach((s,i)=>s.classList.toggle('on',i===k));$$('.st-pic img',v).forEach((im,i)=>im.classList.toggle('on',i===k))}}
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});
+addEventListener('resize',()=>requestAnimationFrame(onScroll));
+
+/* mobile menu */
+const ov=$('#ov'),mb=$('#menuB');
+function closeOv(){if(ov.classList.contains('on')){ov.classList.remove('on');mb.setAttribute('aria-expanded','false');document.body.style.overflow=''}}
+mb.addEventListener('click',()=>{ov.classList.add('on');mb.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';$('#ovClose').focus()});
+$('#ovClose').addEventListener('click',()=>{closeOv();mb.focus()});
+
+/* lightbox */
+const lb=$('#lb'),lbImg=$('#lbImg');let set=[],ix=0,lastF=null;
+const draw=()=>{const f=set[ix],im=f.querySelector('img');lbImg.src=im.currentSrc||im.src;lbImg.alt=im.alt;lbImg.classList.toggle('tr',/\.webp$/.test(im.src)&&f.closest('.mue')!==null);$('#lbCap').textContent=f.dataset.cap||im.alt;$('#lbCount').textContent=`${ix+1} / ${set.length}`};
+document.addEventListener('click',e=>{const f=e.target.closest('figure.z');if(!f||e.target.closest('a'))return;const v=f.closest('.view');set=$$('figure.z',v).filter(x=>x.offsetParent!==null);ix=Math.max(0,set.indexOf(f));lastF=document.activeElement;draw();lb.classList.add('on');document.body.style.overflow='hidden';$('#lbClose').focus()});
+const lbClose=()=>{lb.classList.remove('on');document.body.style.overflow='';lastF&&lastF.focus&&lastF.focus()};
+const step=d=>{ix=(ix+d+set.length)%set.length;draw()};
+$('#lbClose').addEventListener('click',lbClose);$('#lbPrev').addEventListener('click',()=>step(-1));$('#lbNext').addEventListener('click',()=>step(1));
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('lb-st'))lbClose()});
+let tx=0;lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});lb.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)step(d<0?1:-1)});
+document.addEventListener('keydown',e=>{if(lb.classList.contains('on')){if(e.key==='Escape')lbClose();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)}else if(e.key==='Escape')closeOv()});
+$$('figure.z').forEach(f=>{f.tabIndex=0;f.setAttribute('role','button');f.setAttribute('aria-label','Agrandir : '+(f.dataset.cap||'image'));f.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();f.click()}})});
+
+/* toast, copy, downloads */
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove('on'),3200)};
+$('#copyMail').addEventListener('click',()=>{try{navigator.clipboard.writeText('lou.nollent@hotmail.fr').then(()=>toast('Adresse copiée : lou.nollent@hotmail.fr'),()=>toast('lou.nollent@hotmail.fr'))}catch(e){toast('lou.nollent@hotmail.fr')}});
+let dl=null;try{const u=window.claude&&window.claude.use;if(u)window.claude.use('downloads').then(x=>{dl=x}).catch(()=>{})}catch(e){}
+document.addEventListener('click',e=>{const a=e.target.closest('a[data-dl]');if(!a||!dl)return;e.preventDefault();
+ fetch(a.getAttribute('href')).then(r=>{if(!r.ok)throw 0;return r.blob()}).then(b=>dl.save({filename:a.dataset.dl,data:b})).then(()=>toast('Téléchargement lancé')).catch(err=>{if(err&&err.code==='declined')return;toast('Téléchargement indisponible ici · lou.nollent@hotmail.fr')})});
+
+route();
+}
+</script>
+</body>
+</html>
