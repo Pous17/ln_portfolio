@@ -19,6 +19,7 @@
 *{box-sizing:border-box;min-width:0}
 html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 19px/1.55 var(--serif);overflow-x:clip;font-feature-settings:"onum" 1,"kern" 1}
+h1,h2,h3,.fnum,.row .n,.curtain b{font-feature-settings:"lnum" 1,"kern" 1}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 button{font:inherit;color:inherit}
@@ -120,8 +121,8 @@ a:hover .arrow{transform:translateX(6px)}
 .feat.tall .fi{grid-column:2 / span 5;aspect-ratio:4/5}
 .feat.tall .ft{grid-column:8 / span 4}
 .feat.wide .fi{grid-column:1 / span 12;aspect-ratio:21/9}
-.feat.wide .ft{grid-column:1 / span 12;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:end}
-.fnum{font-size:clamp(64px,8vw,140px);line-height:.8;color:var(--ox);font-weight:300}
+.feat.wide .ft{grid-column:1 / span 12;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center}
+.fnum{display:block;margin-bottom:.12em;font-size:clamp(64px,8vw,140px);line-height:.9;color:var(--ox);font-weight:300}
 .feat h3{font-weight:400;font-size:clamp(34px,3.6vw,60px);line-height:1;margin:.15em 0 .3em;text-transform:uppercase;letter-spacing:.01em}
 .feat p{margin:0 0 18px;color:var(--soft)}
 .more{display:inline-flex;align-items:center;gap:10px;font-size:16px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--ox);padding:6px 0;color:var(--ox)}
