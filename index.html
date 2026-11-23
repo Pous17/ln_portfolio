@@ -128,7 +128,7 @@ a:hover .arrow{transform:translateX(6px)}
 .feat:hover h3{color:var(--ox)}
 .hs-band{background:var(--wine);color:var(--paper);padding-block:clamp(50px,7vw,110px)}
 .hs-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(24px,5vw,80px);align-items:center}
-.hs-grid h2{font-weight:300;font-size:clamp(40px,5vw,82px);line-height:.95;margin:0 0 20px;text-transform:uppercase}
+.hs-grid h2{font-weight:300;font-size:clamp(34px,3.3vw,60px);line-height:.95;margin:0 0 20px;text-transform:uppercase}
 .hs-imgs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;align-items:end}
 .hs-imgs a{display:block;text-decoration:none}
 .hs-imgs .ph{aspect-ratio:3/4;border-radius:999px 999px 0 0;overflow:hidden;background:#f2f2f2}
@@ -348,7 +348,7 @@ a:hover .arrow{transform:translateX(6px)}
 
 /* ——— À PROPOS ——— */
 .ab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:clamp(24px,5vw,90px);padding-top:calc(var(--hd) + clamp(30px,5vw,70px));align-items:start}
-.ab-h{font-weight:400;font-size:clamp(60px,9vw,160px);line-height:.85;margin:0 0 24px;text-transform:uppercase}
+.ab-h{font-weight:400;font-size:clamp(48px,5.6vw,100px);line-height:.85;margin:0 0 24px;text-transform:uppercase}
 .portrait{border-radius:999px 999px 0 0;overflow:hidden;aspect-ratio:4/5}
 .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .idcard{margin-top:22px}
@@ -359,28 +359,17 @@ a:hover .arrow{transform:translateX(6px)}
 .terr{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0;padding:0;list-style:none}
 .terr li{border:1px solid var(--ox);border-radius:999px;padding:8px 20px;font-size:19px;color:var(--ox);transition:background .3s,color .3s}
 .terr li:hover{background:var(--ox);color:var(--paper)}
-.cvx{display:grid;grid-template-columns:minmax(0,1fr) 2px minmax(0,1fr);gap:clamp(20px,4vw,64px);margin-top:20px}
-.cvx .vr{background:var(--ox)}
-.cvx h3{font-size:17px;letter-spacing:.07em;text-transform:uppercase;color:var(--ox);font-weight:500;margin:34px 0 12px}
-.cvx h3:first-child{margin-top:0}
-.it{margin:0 0 18px}
-.it small{display:block;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--ox)}
-.it b{font-weight:600;display:block;line-height:1.3}
-.it span{color:var(--soft);line-height:1.35;display:block}
-.lv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 16px;margin:0}
-.lv dt{font-weight:600}
-.lv dd{margin:0;color:var(--soft)}
-.cv-head{display:flex;align-items:end;gap:clamp(20px,4vw,60px);border-bottom:1px solid var(--line);padding-bottom:12px;flex-wrap:wrap}
-.cv-head .big{font-size:clamp(70px,8vw,130px);line-height:.8;color:var(--ox);font-weight:400}
-.cv-head p{margin:0;color:var(--ox);font-size:clamp(22px,2vw,32px);text-transform:uppercase;line-height:1.15;flex:1}
 
 /* ——— CONTACT ——— */
 .ct{background:var(--wine);color:var(--paper);min-height:100svh;padding:calc(var(--hd) + clamp(30px,6vw,90px)) 0 0;display:flex;flex-direction:column}
-.ct-h{font-weight:300;font-size:clamp(70px,14vw,260px);line-height:.8;margin:0;text-transform:uppercase;letter-spacing:-.01em}
+.ct-h{font-weight:300;font-size:clamp(52px,7.5vw,140px);line-height:.8;margin:0;text-transform:uppercase;letter-spacing:-.01em}
 .ct-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,5vw,90px);margin-top:clamp(30px,5vw,70px);padding-top:24px;border-top:1px solid rgba(242,242,242,.5)}
 .mail{font-size:clamp(30px,4.4vw,74px);line-height:1;text-decoration:none;overflow-wrap:anywhere;display:inline-block;border-bottom:1px solid rgba(242,242,242,.5);padding-bottom:6px}
 .mail:hover{border-color:var(--paper)}
 .ct p{margin:18px 0 0;line-height:1.4}
+.ct-links{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:clamp(20px,1.8vw,28px)}
+.ct-links a{text-decoration:none;border-bottom:1px solid rgba(242,242,242,.5);padding-bottom:2px}
+.ct-links a:hover{border-color:var(--paper)}
 .ct-acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .dls{display:grid;gap:12px}
 .dl{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(242,242,242,.45);text-decoration:none;font-size:clamp(24px,2.2vw,34px);line-height:1.1}
@@ -464,9 +453,8 @@ a:hover .arrow{transform:translateX(6px)}
   .sw.ci{width:17vw;height:17vw}
   .op-text{padding:calc(9vw + 26px) max(4.5vw,18px) 40px}
   .op-text.nosw{padding-top:36px}
-  .cq-grid,.cd-grid,.v15-proj,.u-last,.mue-a,.han-intro,.ss,.ss2,.ab,.ct-grid,.cvx,.u-site,.cx{grid-template-columns:1fr;grid-template-areas:none}
+  .cq-grid,.cd-grid,.v15-proj,.u-last,.mue-a,.han-intro,.ss,.ss2,.ab,.ct-grid,.u-site,.cx{grid-template-columns:1fr;grid-template-areas:none}
   .cq-grid>*{grid-area:auto !important}
-  .cvx .vr{display:none}
   .mood6{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:44vw}
   .mood6 figure:nth-child(1),.mood6 figure:nth-child(4){grid-row:auto}
   .rythmes{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
@@ -628,7 +616,7 @@ a:hover .arrow{transform:translateX(6px)}
     </div>
   </div>
 
-  <div class="bleed"><figure class="zoom z" data-cap="Coco Quartier, salle de répétition"><img src="img/cq-drums.webp" alt="Rendu de Coco Quartier : batterie, tapis persans, murs à tasseaux de bois et canapé rouge" width="724" height="543" loading="lazy" decoding="async"></figure><span class="cap">Coco Quartier</span></div>
+  <div class="bleed"><figure class="zoom z" data-cap="Coco Quartier, salle de répétition"><img src="img/cq-drums.webp" alt="Rendu de Coco Quartier : batterie, tapis persans, murs à tasseaux de bois et canapé rouge" width="1448" height="1086" loading="lazy" decoding="async"></figure><span class="cap">Coco Quartier</span></div>
 
   <div class="cq-band">
     <div class="wrap sec">
@@ -657,7 +645,7 @@ a:hover .arrow{transform:translateX(6px)}
 
   <div class="wrap sec">
     <div class="cd-grid">
-      <figure class="z rv cover-fit" data-cap="Coco Dodo, chambre partagée" style="grid-row:span 2;min-height:420px"><img src="img/cd-dorm.webp" alt="Rendu de Coco Dodo : chambre aux lits superposés en bois, bureaux sous les fenêtres, lumière dorée" width="723" height="544" loading="lazy" decoding="async"></figure>
+      <figure class="z rv cover-fit" data-cap="Coco Dodo, chambre partagée" style="grid-row:span 2;min-height:420px"><img src="img/cd-dorm.webp" alt="Rendu de Coco Dodo : chambre aux lits superposés en bois, bureaux sous les fenêtres, lumière dorée" width="1445" height="1088" loading="lazy" decoding="async"></figure>
       <div class="rv" style="grid-column:span 2;--d:.08s">
         <h2 class="h2">Coco Dodo</h2>
         <p class="kick">Habiter · Créer · Se retrouver</p>
@@ -838,7 +826,7 @@ a:hover .arrow{transform:translateX(6px)}
     </div>
   </div>
   <div class="wrap"><div class="rh"><span>Unité 01</span><span><b>Le projet</b></span><span>Mobilité · Visibilité</span></div></div>
-  <div class="bleed" style="margin-top:clamp(24px,3vw,40px)"><figure class="zoom z" data-cap="Unité 01, en service dans le parc"><img src="img/u01-render.webp" alt="Rendu : Unité 01 ouvert, comptoir en inox, tabourets et cuisinier, sur une pelouse du parc" width="894" height="456" loading="lazy" decoding="async"></figure><span class="cap">Unité 01 · Parc de la Villette</span></div>
+  <div class="bleed" style="margin-top:clamp(24px,3vw,40px)"><figure class="zoom z" data-cap="Unité 01, en service dans le parc"><img src="img/u01-render.webp" alt="Rendu : Unité 01 ouvert, comptoir en inox, tabourets et cuisinier, sur une pelouse du parc" width="1490" height="760" loading="lazy" decoding="async"></figure><span class="cap">Unité 01 · Parc de la Villette</span></div>
   <div class="wrap sec">
     <div class="elev">
       <figure class="z rv" data-cap="Élévation"><img src="img/u01-elev2.webp" alt="Élévation du food truck avec habillage coloré et silhouettes au comptoir" width="795" height="249" loading="lazy" decoding="async"><figcaption>Élévation</figcaption></figure>
@@ -890,20 +878,20 @@ a:hover .arrow{transform:translateX(6px)}
   <div class="wrap steps" id="steps">
     <div class="steps-in">
       <div class="st-txt">
-        <div class="st on" data-step="0"><i>i.</i><h3>Allumage de l’enveloppe en papier</h3></div>
-        <div class="st" data-step="1"><i>ii.</i><h3>Combustion</h3></div>
-        <div class="st" data-step="2"><i>iii.</i><h3>Révélation de la céramique</h3></div>
+        <div class="st on" data-step="0"><i>I.</i><h3>Allumage de l’enveloppe en papier</h3></div>
+        <div class="st" data-step="1"><i>II.</i><h3>Combustion</h3></div>
+        <div class="st" data-step="2"><i>III.</i><h3>Révélation de la céramique</h3></div>
       </div>
       <div class="st-pic"><span class="glow"></span>
         <img class="on" src="img/mue-step1.webp" alt="Dessin : allumage de l’enveloppe en papier" data-i="0" width="540" height="612" loading="lazy" decoding="async">
-        <img src="img/mue-step2.webp" alt="Dessin : combustion de l’enveloppe" data-i="1" width="186" height="352" loading="lazy" decoding="async">
-        <img src="img/mue-step3.webp" alt="Dessin : révélation de la céramique rouge" data-i="2" width="126" height="306" loading="lazy" decoding="async">
+        <img src="img/mue-step2.webp" alt="Dessin : combustion de l’enveloppe" data-i="1" width="540" height="612" loading="lazy" decoding="async">
+        <img src="img/mue-step3.webp" alt="Dessin : révélation de la céramique rouge" data-i="2" width="540" height="612" loading="lazy" decoding="async">
       </div>
     </div>
     <div class="st-mobile">
-      <figure><img src="img/mue-step1.webp" alt="Dessin : allumage de l’enveloppe en papier" width="540" height="612" loading="lazy" decoding="async"><figcaption>i. Allumage de l’enveloppe en papier</figcaption></figure>
-      <figure><img src="img/mue-step2.webp" alt="Dessin : combustion" width="186" height="352" loading="lazy" decoding="async"><figcaption>ii. Combustion</figcaption></figure>
-      <figure><img src="img/mue-step3.webp" alt="Dessin : révélation de la céramique" width="126" height="306" loading="lazy" decoding="async"><figcaption>iii. Révélation de la céramique</figcaption></figure>
+      <figure><img src="img/mue-step1.webp" alt="Dessin : allumage de l’enveloppe en papier" width="540" height="612" loading="lazy" decoding="async"><figcaption>I. Allumage de l’enveloppe en papier</figcaption></figure>
+      <figure><img src="img/mue-step2.webp" alt="Dessin : combustion" width="540" height="612" loading="lazy" decoding="async"><figcaption>II. Combustion</figcaption></figure>
+      <figure><img src="img/mue-step3.webp" alt="Dessin : révélation de la céramique" width="540" height="612" loading="lazy" decoding="async"><figcaption>III. Révélation de la céramique</figcaption></figure>
     </div>
   </div>
   <div class="wrap sec">
@@ -916,7 +904,7 @@ a:hover .arrow{transform:translateX(6px)}
   <div class="wrap sec" style="padding-top:0">
     <figure class="lines-paper z rv" data-cap="Dessins de recherche"><img src="img/mue-lines.webp" alt="Six dessins au trait du bougeoir : profils, face, dessus et enveloppe" style="margin:auto" width="676" height="615" loading="lazy" decoding="async"></figure>
   </div>
-  <div class="bleed"><figure class="zoom z" data-cap="La Mue, mise en scène"><img src="img/mue-bar.webp" alt="Mise en scène au bar : bougeoirs allumés sur un comptoir rouge, silhouettes dessinées en lumière" style="object-position:50% 80%" width="707" height="971" loading="lazy" decoding="async"></figure></div>
+  <div class="bleed"><figure class="zoom z" data-cap="La Mue, mise en scène"><img src="img/mue-bar.webp" alt="Mise en scène au bar : bougeoirs allumés sur un comptoir rouge, silhouettes dessinées en lumière" style="object-position:50% 80%" width="1311" height="1800" loading="lazy" decoding="async"></figure></div>
   <div data-next></div>
 </article>
 
@@ -1042,7 +1030,7 @@ a:hover .arrow{transform:translateX(6px)}
     <div class="ab">
       <div class="rv">
         <h1 class="ab-h anim">Mon profil</h1>
-        <div class="portrait"><img src="img/portrait.webp" alt="Portrait de Lou Nollent" width="544" height="723" loading="lazy" decoding="async"></div>
+        <div class="portrait"><img src="img/diplome.webp" alt="Lou Nollent lors de la remise de son diplôme à l’Académie Charpentier" width="1200" height="1600" style="object-position:50% 45%" loading="lazy" decoding="async"></div>
         <div class="idcard">
           <h2>Lou Nollent</h2>
           <p>Étudiante en architecture d’intérieur<br>Académie Charpentier, quatrième année.</p>
@@ -1062,35 +1050,7 @@ a:hover .arrow{transform:translateX(6px)}
         </div>
       </div>
     </div>
-
-    <div class="sec" style="padding-top:clamp(60px,8vw,120px)">
-      <div class="cv-head rv"><span class="big">CV</span><p>Architecture d’intérieur &amp; design</p></div>
-      <div class="cvx rv">
-        <div>
-          <h3>Formation</h3>
-          <div class="it"><small>2023 – 2026</small><b>Académie Charpentier · Paris</b><span>Formation en architecture d’intérieur et design.</span></div>
-          <div class="it"><small>2022 – 2023</small><b>Penninghen · Paris</b><span>Année préparatoire en école de direction artistique et d’architecture d’intérieur.</span></div>
-          <div class="it"><small>2022</small><b>Lycée Gusdorf · Paris</b><span>Baccalauréat.</span></div>
-          <h3>Logiciels</h3>
-          <dl class="lv"><dt>AutoCAD</dt><dd>Confirmé</dd><dt>InDesign</dt><dd>Intermédiaire</dd><dt>Photoshop</dt><dd>Débutant</dd><dt>Rhino</dt><dd>Débutant</dd><dt>Twinmotion</dt><dd>Débutant</dd></dl>
-          <h3>Langues</h3>
-          <dl class="lv"><dt>Français</dt><dd>Langue maternelle</dd><dt>Anglais</dt><dd>C1</dd></dl>
-        </div>
-        <div class="vr" aria-hidden="true"></div>
-        <div>
-          <h3>Expériences professionnelles</h3>
-          <div class="it"><small>Juin – septembre 2025</small><b>Disney World · Orlando, États-Unis</b><span>CDD dans le cadre du Disney International Program.</span></div>
-          <div class="it"><small>Avril – juin 2025</small><b>Salon Camélia · Coffee shop</b><span>Serveuse · Temps partiel.</span></div>
-          <div class="it"><small>Mai 2024 – janvier 2025</small><b>Café Noir · Paris</b><span>Serveuse / Bartender · Temps partiel.</span></div>
-          <div class="it"><small>2018 – 2023</small><b>Kinougarde</b><span>Garde d’enfants.</span></div>
-          <h3>Engagement associatif</h3>
-          <div class="it"><b>Depuis 2017 · Banque alimentaire, Paris</b><span>Participation annuelle à la collecte nationale de novembre.</span></div>
-          <h3>Centres d’intérêt</h3>
-          <dl class="lv" style="grid-template-columns:auto 1fr"><dt>Architecture</dt><dd>Art déco, Art nouveau et gothique.</dd><dt>Littérature</dt><dd>Diversité des genres et des auteurs.</dd><dt>Voyages</dt><dd>Découverte de cultures et de lieux.</dd></dl>
-        </div>
-      </div>
-    </div>
-    <footer class="colo" data-colo></footer>
+    <footer class="colo" data-colo style="margin-top:clamp(60px,8vw,120px)"></footer>
   </div>
 </section>
 
@@ -1102,6 +1062,10 @@ a:hover .arrow{transform:translateX(6px)}
       <div class="ct-grid">
         <div>
           <a class="mail" href="mailto:lou.nollent@hotmail.fr">lou.nollent@hotmail.fr</a>
+          <ul class="ct-links">
+            <li><a href="tel:+33782588856">+33 7 82 58 88 56</a></li>
+            <li><a href="https://www.linkedin.com/in/lou-nollent-12aa0527b/" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a></li>
+          </ul>
           <p>Lou Nollent · Paris 2<sup>e</sup><br>Étudiante en architecture d’intérieur, Académie Charpentier, quatrième année.</p>
           <div class="ct-acts">
             <button class="btn lt" id="copyMail" type="button">Copier l’adresse</button>
